@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function init() {
+	lemons = 10;
+	money = 0;
+	saplings = 0;
+	trees = 0;
+	keep_selling = false;
+	currently_selling = false;
+	trees_growing = false;
+	
+	lemonade_price = 1;
+	lemon_price = 5;
+	lemon_amount = 10;
+	sapling_price = 25;
+	lemon_rate_per_tree = 0.2;
+	
+	update();
+}
+function sell_lemonade() {
+	lemons--;
+	keep_selling = document.getElementById("keep_selling_lemonade").checked;
+	document.getElementById("sell_lemonade_button").disabled = true;
+	currently_selling = true;
+	lemon_progress = 0;
+	interval_selling_lemonade = setInterval(function () {
+		document.getElementById("sell_lemonade_progress").value = lemon_progress;
+		lemon_progress++;
+		if (lemon_progress > 100) {
+			lemon_progress = 0;
+			money += lemonade_price;
+			document.getElementById("sell_lemonade_progress").value = lemon_progress;
+			keep_selling = document.getElementById("keep_selling_lemonade").checked;
+			if (keep_selling && lemons > 0) {
+				lemons--;
+			} else {
+				clearInterval(interval_selling_lemonade);
+				currently_selling = false;
+			}
+			update();
+		}
+	}, 10)
+	update();
+}
+function buy_lemons() {
+	lemons += lemon_amount;
+	money -= lemon_price;
+	update();
+}
+function buy_sapling() {
+	saplings ++;
+	money -= sapling_price;
+	document.getElementById("sapling_progress").hidden = false;
+	update();
+	if (trees_growing)
+		return;
+	tree_progress = 0;
+	growing_tree = setInterval(function () {
+	trees_growing = true;
+		document.getElementById("sapling_progress").value = tree_progress;
+		tree_progress++;
+		if (tree_progress > 1000) {
+			tree_progress = 0;
+			trees++;
+			if (trees == 1)
+				start_lemon_growth();
+			saplings--;
+			document.getElementById("sapling_progress").value = tree_progress;
+			if (saplings == 0) {
+				trees_growing = false;
+				document.getElementById("sapling_progress").hidden = true;
+				clearInterval(growing_tree);
+			}
+			update();
+		}
+	}, 10)
+}
+function start_lemon_growth() {
+	setTimeout(function (){
+		lemons++;
+		update();
+		start_lemon_growth();
+	}, 1000/(trees*lemon_rate_per_tree))
+}
+function update() {
+	document.getElementById("lemons_counter").innerHTML = (lemons > 0) ? "Lemons: " + lemons + "🍋" : "";
+	document.getElementById("money_counter").innerHTML = (money > 0) ? "Money: " + money + "💶" : "";
+	document.getElementById("sapling_counter").innerHTML = (saplings > 0) ? "Saplings: " + saplings + "🌱" : "";
+	document.getElementById("tree_counter").innerHTML = (trees > 0) ? "Lemon Trees: " + trees + "🌳 (+" + (lemon_rate_per_tree * trees).toFixed(2) + "🍋/s)" : "";
+	keep_selling = document.getElementById("keep_selling_lemonade").checked;
+	if (currently_selling == false) {
+		document.getElementById("sell_lemonade_button").disabled = lemons <= 0;
+	}
+	document.getElementById("buy_lemons_button").disabled = money < lemon_price;
+	document.getElementById("buy_sapling_button").disabled = money < sapling_price;
+}
+</script>
+<style>
+.button {
+    background-color: #20872e;
+    border: outset;
+    color: #efbe2b;
+    padding: 5px 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #efbe2b;
+	border: inset;
+	color: #20872e;
+}
+
+.button:disabled {
+    background-color: #cccccc;
+	border: inset;
+	color: #666666;
+}
+</style>
+</head>
+<body onload="init()">
+
+<h2>Mara's Idle Game</h2>
+<hr>
+<p id=lemons_counter></p>
+<p id=money_counter></p>
+<p id=sapling_counter></p>
+<progress id="sapling_progress" value="0", max="1000" hidden></progress>
+<p id=tree_counter></p>
+
+<button id="sell_lemonade_button" class="button", onclick="sell_lemonade()" title="Turns 1 lemon into lemonade and sell it for 1 money">🍹 Sell Lemonade</button>
+<progress id="sell_lemonade_progress" value="0", max="100"></progress>
+<input type="checkbox" id="keep_selling_lemonade" title="Keep selling lemonade until you run out of lemons">
+<label for="keep_selling_lemonade" title="Keep selling lemonade until you run out of lemons">Keep selling?</label>
+
+<button id="buy_lemons_button" class="button", onclick="buy_lemons()" title="Go buy 10 more lemons for 5 money">🍋 Buy Lemons</button>
+<button id="buy_sapling_button" class="button", onclick="buy_sapling()" title="Go buy a lemon tree sapling for 25 money">🌱 Buy Sapling</button>
+</body>
+</html>
