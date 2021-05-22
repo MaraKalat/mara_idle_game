@@ -1,217 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-function init() {
-	lemons = 10;
-	money = 0;
-	saplings = 0;
-	trees = 0;
-	keep_selling = false;
-	currently_selling = false;
-	trees_growing = false;
-	
-	lemonade_price = 1;
-	lemon_price = 5;
-	lemon_amount = 10;
-	sapling_price = 25;
-	lemon_rate_per_tree = 0.2;
-	
-	update();
-}
-function sell_lemonade() {
-	lemons--;
-	keep_selling = document.getElementById("keep_selling_lemonade").checked;
-	document.getElementById("sell_lemonade_button").disabled = true;
-	currently_selling = true;
-	lemon_progress = 0;
-	interval_selling_lemonade = setInterval(function () {
-		document.getElementById("sell_lemonade_progress").value = lemon_progress;
-		lemon_progress++;
-		if (lemon_progress > 100) {
-			lemon_progress = 0;
-			money += lemonade_price;
-			document.getElementById("sell_lemonade_progress").value = lemon_progress;
-			keep_selling = document.getElementById("keep_selling_lemonade").checked;
-			if (keep_selling && lemons > 0) {
-				lemons--;
-			} else {
-				clearInterval(interval_selling_lemonade);
-				currently_selling = false;
-			}
-			update();
-		}
-	}, 10)
-	update();
-}
-function buy_lemons() {
-	lemons += lemon_amount;
-	money -= lemon_price;
-	update();
-}
-function buy_sapling() {
-	saplings ++;
-	money -= sapling_price;
-	document.getElementById("sapling_progress").hidden = false;
-	update();
-	if (trees_growing)
-		return;
-	tree_progress = 0;
-	growing_tree = setInterval(function () {
-	trees_growing = true;
-		document.getElementById("sapling_progress").value = tree_progress;
-		tree_progress++;
-		if (tree_progress > 1000) {
-			tree_progress = 0;
-			trees++;
-			if (trees == 1)
-				start_lemon_growth();
-			saplings--;
-			document.getElementById("sapling_progress").value = tree_progress;
-			if (saplings == 0) {
-				trees_growing = false;
-				document.getElementById("sapling_progress").hidden = true;
-				clearInterval(growing_tree);
-			}
-			update();
-		}
-	}, 10)
-}
-function start_lemon_growth() {
-	setTimeout(function (){
-		lemons++;
-		update();
-		start_lemon_growth();
-	}, 1000/(trees*lemon_rate_per_tree))
-}
-function update() {
-	document.getElementById("lemons_counter").innerHTML = (lemons > 0) ? "Lemons: " + lemons + "🍋" : "";
-	document.getElementById("money_counter").innerHTML = (money > 0) ? "Money: " + money + "💶" : "";
-	document.getElementById("sapling_counter").innerHTML = (saplings > 0) ? "Saplings: " + saplings + "🌱" : "";
-	document.getElementById("tree_counter").innerHTML = (trees > 0) ? "Lemon Trees: " + trees + "🌳 (+" + (lemon_rate_per_tree * trees).toFixed(2) + "🍋/s)" : "";
-	keep_selling = document.getElementById("keep_selling_lemonade").checked;
-	if (currently_selling == false) {
-		document.getElementById("sell_lemonade_button").disabled = lemons <= 0;
-	}
-	document.getElementById("buy_lemons_button").disabled = money < lemon_price;
-	document.getElementById("buy_sapling_button").disabled = money < sapling_price;
-}
-</script>
-<style>
-.button {
-    background-color: #20872e;
-    border: outset;
-    color: #efbe2b;
-    padding: 5px 5px;
-    text-align: center;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: #efbe2b;
-	border: inset;
-	color: #20872e;
-}
-
-.button:disabled {
-    background-color: #cccccc;
-	border: inset;
-	color: #666666;
-}
-.msg-box {
-    background: ghostwhite;
-    padding: 10px;
-    border: 1px solid lightgray;
-    margin: 10px;
-    max-width: 550px;
-    float:left;
-}
-
-/** ios1-ios6 bubbles **/
-.bubble {
-  box-sizing: border-box;
-  float: left;
-  width: auto;
-  max-width: 80%;
-  position: relative;
-  clear: both;
-
-  background: #95c2fd;
-  background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.15, #bee2ff), color-stop(1, #95c2fd));
-  background-image: -webkit-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: -moz-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: -ms-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: -o-linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  background-image: linear-gradient(bottom, #bee2ff 15%, #95c2fd 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#95c2fd', endColorstr='#bee2ff');
-
-  border: solid 1px rgba(0,0,0,0.5);
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  border-radius: 20px;
-
-  -webkit-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
-  -moz-box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
-  box-shadow: inset 0 8px 5px rgba(255,255,255,0.65), 0 1px 2px rgba(0,0,0,0.2);
-
-  margin-bottom: 20px;
-  padding: 6px 10px;
-  color: #000;
-  text-shadow: 0 1px 1px rgba(255,255,255,0.8);
-  word-wrap: break-word;
-}
-
-.bubble:before, .bubble:after {
-  border-radius: 20px / 5px;
-  content: '';
-  display: block;
-  position: absolute;
-}
-.bubble:before {
-  border: 10px solid transparent;
-  border-bottom-color: rgba(0,0,0,0.5);
-  bottom: 0px;
-  left: -7px;
-  z-index: -2;
-}
-.bubble:after {
-  border: 8px solid transparent;
-  border-bottom-color: #bee2ff; /* arrow color */
-  bottom: 1px;
-  left: -5px;
-}
-.bubble-alt {
-  float: right;
-}
-.bubble-alt:before {
-  left: auto;
-  right: -7px;
-}
-.bubble-alt:after {
-  left: auto;
-  right: -5px;
-}
-
-.bubble p {
-  font-size: 1.4em;
-}
-
-/* green bubble */
-.green {
-  background: #7acd47;
-  background-image: -webkit-gradient(linear,left bottom,left top,color-stop(0.15, #ace44b),color-stop(1, #7acd47));
-  background-image: -webkit-linear-gradient(bottom, #ace44b 15%, #7acd47 100%);
-  background-image: -moz-linear-gradient(bottom, #ace44b 15%, #7acd47 100%);
-  background-image: -ms-linear-gradient(bottom, #ace44b 15%, #7acd47 100%);
-  background-image: -o-linear-gradient(bottom, #ace44b 15%, #7acd47 100%);
-  background-image: linear-gradient(bottom, #ace44b 15%, #7acd47 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#7acd47', endColorstr='#ace44b');
-}
-.green:after {
-  border-bottom-color: #ace44b;
-}
-</style>
+    <link rel="stylesheet" type="text/css" media="all" href="styles.css">
+<script src="script.js"></script>
 </head>
 <body onload="init()">
 
@@ -243,38 +34,100 @@ function update() {
         for="keep_selling_lemonade"
         title="Keep selling lemonade until you run out of lemons"
 >Keep selling?</label>
+<br>
 
 <button
         id="buy_lemons_button"
         class="button"
         onclick="buy_lemons()"
         title="Go buy 10 more lemons for 5 money"
+        hidden
 >🍋 Buy Lemons</button>
 <button
         id="buy_sapling_button"
         class="button"
         onclick="buy_sapling()"
         title="Go buy a lemon tree sapling for 25 money"
+        hidden
 >🌱 Buy Sapling</button>
 
 
-
+<br>
 <div class="msg-box">
     <header><div align="center" style="font-size:20px"><b>💬 Nova Sintra City Group Chat</b><hr></div></header>
-    <div class="bubble bubble-alt green">
+    <div id="plot17" class="bubble pink">
+        <div style="font-size:30px; float:left">🏪</div>
+        I don't know what <highlight>@👁️‍🗨️</highlight> told you, but I don't think that's a real thing. 😕<br>
+        I'll gladly sell you a sapling if you want one though. Just don't expect too much.
+    </div>
+    <div id="plot16" class="bubble bubble-alt green">
         <div style="font-size:30px; float:right">🧒🏽</div>
-        Hello everybody! I'm Carmo and I'm 11 years old!<br>
+        <highlight>@🏪</highlight>, I'm coming to buy one of your saplings!
+        I have a magic potion that will make them grow super fast.
+    </div>
+    <div id="plot15" class="bubble white">
+        <div style="font-size:30px; float:left">👁️‍🗨️</div>
+        Easiest just to show you, I'll be right over...
+    </div>
+    <div id="plot14" class="bubble bubble-alt green">
+        <div style="font-size:30px; float:right">🧒🏽</div>
+        What do you mean, <highlight>@👁️‍🗨️</highlight>? 😲
+    </div>
+    <div id="plot13" class="bubble white">
+        <div style="font-size:30px; float:left">👁️‍🗨️</div>
+        That's not <b>entirely</b> true...
+    </div>
+    <div id="plot12" class="bubble pink">
+        <div style="font-size:30px; float:left">🏪</div>
+        Hah! I guess it would, at least 5-6 years.<br>There are no magic shortcuts when it comes to stuff like this.
+    </div>
+    <div id="plot11" class="bubble bubble-alt green">
+        <div style="font-size:30px; float:right">🧒🏽</div>
+        Oooh, that sounds like fun!<br>Wouldn't that take a long time though?
+    </div>
+    <div id="plot10" class="bubble pink">
+        <div style="font-size:30px; float:left">🏪</div>
+        If you're interested, <highlight>@🧒🏽</highlight>,
+        I can also sell you some lemon tree saplings so you could grow your own lemons.<br><br>
+        They should do okay in your backyard if you water them regularly.
+    </div>
+    <div id="plot9" class="bubble">
+        <div style="font-size:30px; float:left">🦜</div>
+        I just can't get enough of this lemonade, it's delicious.<br>🍹✨
+    </div>
+    <div id="plot8" class="bubble pink">
+        <div style="font-size:30px; float:left">🏪</div>
+        Happy to help a fellow businesswoman! 😹
+    </div>
+    <div id="plot7" class="bubble bubble-alt green">
+        <div style="font-size:30px; float:right">🧒🏽</div>
+        There we go, lemons back in stock. Thanks, <highlight>@🏪</highlight>!
+    </div>
+    <div id="plot6" class="bubble bubble-alt green">
+        <div style="font-size:30px; float:right">🧒🏽</div>
+        Uh oh, I'm out of lemons. Hang on, I have to go grab some more from the store. Back in a bit!
+    </div>
+    <div id="plot5" class="bubble">
+        <div style="font-size:30px; float:left">🐶</div>
+        Hmm, I could use a refreshing drink too. ☀️ 👍 <br>I'll be there in a bit.
+    </div>
+    <div id="plot4" class="bubble bubble-alt green">
+        <div style="font-size:30px; float:right">🧒🏽</div>
+        Thank you for your business, <highlight>@🦜</highlight>!
+    </div>
+    <div id="plot3" class="bubble">
+        <div style="font-size:30px; float:left">🦜</div>
+        That hit the spot, highly recommended!
+    </div>
+    <div id="plot2" class="bubble">
+        <div style="font-size:30px; float:left">🦜</div>
+        Hi <highlight>@🧒🏽</highlight>, That's so cute! I'll come take a look right now!
+    </div>
+    <div id="plot1" class="bubble bubble-alt green">
+        <div style="font-size:30px; float:right">🧒🏽</div>
+        Hello <highlight>@everybody</highlight>! I'm Carmo and I'm 11 years old!<br>
         I'm selling lemonade in front of our house just off the praça, come buy some please! 💖
     </div>
-    <div class="bubble">
-        <div style="font-size:30px; float:left">🦜</div>
-        That's so cute! I'll come take a look right now!
-    </div>
-    <div class="bubble">
-        <div style="font-size:30px; float:left">🐶</div>
-        I could use a refreshing drink! ☀️ 👍
-    </div>
-
 </div>
 </body>
 </html>
