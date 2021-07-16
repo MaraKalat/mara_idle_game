@@ -1,3 +1,13 @@
-code,avatar,timestamp,message
-start1,🧒🏽 ,,"Hello @everybody! I'm Carmo and I'm 11 years old!
+code,avatar,colour,message
+start1,🧒🏽,green,"Hello @everybody! I'm Carmo and I'm 11 years old!
 I'm selling lemonade in front of our house just off the praça, come buy some please! 💖"
+start2,🦜,,"Hi @🧒🏽, That's so cute! I'll come take a look right now!"
+sale1,🦜,,"That hit the spot, highly recommended!"
+sale2,🧒🏽,green,"Thank you for your business, @🦜!"
+sale3,🐶,,"Hmm, I could use a refreshing drink too. ☀️ 👍
+I'll be there in a bit."
+out_of_lemons1,🧒🏽,green,"Uh oh, I'm out of lemons. Hang on, I have to go grab some more from the store. Back in a bit!"
+bought_lemons1,🧒🏽,green,"There we go, lemons back in stock. Thanks, @🏪!"
+bought_lemons2,🏪,pink,Happy to help a fellow businesswoman! 😹
+misc1,🐶,,"I just can't get enough of this lemonade, it's delicious.
+🍹✨"
