@@ -8,7 +8,8 @@ sale3,,🐶,,"Hmm, I could use a refreshing drink too. ☀️ 👍
 I'll be there in a bit."
 out_of_lemons1,,🧒🏽,green,"Uh oh, I'm out of lemons. Hang on, I have to go grab some more from the store. Back in a bit!"
 bought_lemons1,bought_lemons2,🧒🏽,green,"There we go, lemons back in stock. Thanks, @🏪!"
-bought_lemons2,,🏪,pink,Happy to help a fellow businesswoman! 😹
+bought_lemons2,,🏪,pink,"Happy to help a fellow businesswoman! 😹
+We have plenty of other things in stock if your business takes off."
 misc1,,🐶,,"I just can't get enough of this lemonade, it's delicious.
 🍹✨"
 saplings1,saplings2,🏪,pink,"If you're interested, @🧒🏽, I can also sell you some lemon tree saplings so you could grow your own lemons.
@@ -20,7 +21,7 @@ saplings3,saplings4,🏪,pink,"Hah! I guess it would, at least 5-6 years.
 There are no magic shortcuts when it comes to stuff like this."
 saplings4,saplings5,👁️‍🗨️,white,That's not <b>entirely</b> true...
 saplings5,saplings6,🧒🏽,green,"What do you mean, @👁️‍🗨️? 😲"
-saplings6,saplings7,👁️‍🗨️,white,"Easiest just to show you, I'll be right over..."
+saplings6,,👁️‍🗨️,white,"Easiest just to show you, I'll be right over..."
 saplings7,saplings8,🧒🏽,green,"@🏪, I'm coming to buy one of your saplings!
 I have a magic potion that will make them grow super fast."
 saplings8,,🏪,pink,"I don't know what @👁️‍🗨️ told you, but I don't think that's a real thing. 😕
