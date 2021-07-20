@@ -8,9 +8,30 @@ sale3,,🐶,,"Hmm, I could use a refreshing drink too. ☀️ 👍
 I'll be there in a bit."
 out_of_lemons1,,🧒🏽,green,"Uh oh, I'm out of lemons. Hang on, I have to go grab some more from the store. Back in a bit!"
 bought_lemons1,bought_lemons2,🧒🏽,green,"There we go, lemons back in stock. Thanks, @🏪!"
-bought_lemons2,,🏪,pink,Happy to help a fellow businesswoman! 😹
-misc1,,🐶,,"I just can't get enough of this lemonade, it's delicious.
+bought_lemons2,bought_lemons3,🏪,pink,"Happy to help a fellow businesswoman! 😹
+
+We have plenty of other things in stock if your business takes off and you have more money to spend."
+bought_lemons3,bought_lemons4,🧒🏽,green,"Ooh, like what? 😲"
+bought_lemons4,bought_lemons5,🏪,pink,"Well, we have some very nice glitter glue pens so you can make a fancy sign for your lemonade business.
+And I guess we also have an ice machine in stock, that one’s kind of expensive though."
+bought_lemons5,,🧒🏽,green,I’ll think about it! They sound very useful.
+bought_glitter_pens1,bought_glitter_pens2,🏪,pink,"Thank you for stopping by and showing me the sign you drew with the glitter pens, @🧒🏽.
+It was very impressive!"
+bought_glitter_pens2,bought_glitter_pens3,🧒🏽,green,I bet people will come buy lemonade twice as fast now!
+bought_glitter_pens3,,🏪,pink,"I wouldn’t be surprised, yeah. 🙂"
+bought_ice_machine1,bought_ice_machine2,🧒🏽,green,"That new ice machine is so fast! I really like it!
+Do you have another one?"
+bought_ice_machine2,,🏪,pink,"Just how much lemonade do you think you’re going to sell?! 🤣
+I’ll have to order in a new one, they take up quite a bit of space and don’t usually sell all that quickly."
+misc1,,🏖️,,"Just what I needed after a day in the sun, thank you @🧒🏽!"
+misc2,,🐶,,"I just can't get enough of this lemonade, it's delicious.
 🍹✨"
+misc3,,🏍️,,"Thanks for letting me fill up my thermos with lemonade, that should keep me going on my tour of the island today."
+misc4,,🏖️,,This really is excellent lemonade. 💛
+misc5,,🏍️,,"...I accidentally drank it all before lunch, I’ll come by for a refill in a bit!"
+misc6,misc7,🐶,,More lemonade! Give me more!
+misc7,,🏍️,,"Are you doing okay there, @🐶?
+It is good though, I’ll admit I could go for some more as well."
 saplings1,saplings2,🏪,pink,"If you're interested, @🧒🏽, I can also sell you some lemon tree saplings so you could grow your own lemons.
 
 They should do okay in your backyard if you water them regularly."
@@ -20,7 +41,7 @@ saplings3,saplings4,🏪,pink,"Hah! I guess it would, at least 5-6 years.
 There are no magic shortcuts when it comes to stuff like this."
 saplings4,saplings5,👁️‍🗨️,white,That's not <b>entirely</b> true...
 saplings5,saplings6,🧒🏽,green,"What do you mean, @👁️‍🗨️? 😲"
-saplings6,saplings7,👁️‍🗨️,white,"Easiest just to show you, I'll be right over..."
+saplings6,,👁️‍🗨️,white,"Easiest just to show you, I'll be right over..."
 saplings7,saplings8,🧒🏽,green,"@🏪, I'm coming to buy one of your saplings!
 I have a magic potion that will make them grow super fast."
 saplings8,,🏪,pink,"I don't know what @👁️‍🗨️ told you, but I don't think that's a real thing. 😕
