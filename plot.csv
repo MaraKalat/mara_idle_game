@@ -12,9 +12,9 @@ bought_lemons2,bought_lemons3,🏪,pink,"Happy to help a fellow businesswoman! �
 
 We have plenty of other things in stock if your business takes off and you have more money to spend."
 bought_lemons3,bought_lemons4,🧒🏽,green,"Ooh, like what? 😲"
-bought_lemons4,bought_lemons5,🏪,pink,"Well, we have some very nice glitter glue pens so you can make a fancy sign for your lemonade business.
-And I guess we also have an ice machine in stock, that one’s kind of expensive though."
-bought_lemons5,,🧒🏽,green,I’ll think about it! They sound very useful.
+bought_lemons4,bought_lemons5,🏪,pink,"Well, we have some very nice glitter glue pens so you can make a fancy sign for your lemonade business."
+bought_lemons5,bought_lemons_final,🏪,pink,"🤔 And I guess we also have an ice machine in stock if you’re running out of that a lot, that one’s kind of expensive though."
+bought_lemons_final,,🧒🏽,green,I’ll think about it! They sound very useful.
 bought_glitter_pens1,bought_glitter_pens2,🏪,pink,"Thank you for stopping by and showing me the sign you drew with the glitter pens, @🧒🏽.
 It was very impressive!"
 bought_glitter_pens2,bought_glitter_pens3,🧒🏽,green,I bet people will come buy lemonade twice as fast now!
@@ -46,3 +46,15 @@ saplings7,saplings8,🧒🏽,green,"@🏪, I'm coming to buy one of your sapling
 I have a magic potion that will make them grow super fast."
 saplings8,,🏪,pink,"I don't know what @👁️‍🗨️ told you, but I don't think that's a real thing. 😕
 I'll gladly sell you a sapling if you want one though. Just don't expect too much."
+worried_store1,worried_store2,🏪,pink,"@everybody I’m not sure what is going on today, but I’m going to have to limit the amount of lemons people are allowed to buy to 1 bag each."
+worried_store2,worried_store3,🦜,,That’s so unfair!
+worried_store3,worried_store4,🏪,pink,"@🦜 if I wouldn’t, I’d be out in the next hour.
+People have really been going crazy today…"
+worried_store4,worried_store5,🧒🏽,green,"I’m sorry, @🏪! I know I bought a bunch of them."
+worried_store5,worried_store6,🏪,pink,"You’re fine, @🧒🏽. Don’t worry. 😊
+Some other people just are going crazy for them today."
+worried_store6,worried_store7,🐶,,"We need more lemons!
+You can’t cut us off like this."
+worried_store7,,🏪,pink,"Wah, cut you off? You’re worrying me, @🐶.
+Also, I can’t stop you from chomping down on lemons as soon as you’ve paid for them, but, uh…
+(Yes, I saw you.)"
