@@ -4,8 +4,10 @@ I'm selling lemonade in front of our house just off the praça, come buy some pl
 start2,,🦜,,"Hi @🧒🏽, That's so cute! I'll come take a look right now!"
 sale1,sale2,🦜,,"That hit the spot, highly recommended!"
 sale2,sale3,🧒🏽,green,"Thank you for your business, @🦜!"
-sale3,,🐶,,"Hmm, I could use a refreshing drink too. ☀️ 👍
+sale3,sale4,🐶,,"Hmm, I could use a refreshing drink too. ☀️ 👍
 I'll be there in a bit."
+sale4,sale5,🏖️,,Me too!
+sale5,,🧒🏽,green,"I’ve still got plenty! ...well, kind of."
 out_of_lemons1,,🧒🏽,green,"Uh oh, I'm out of lemons. Hang on, I have to go grab some more from the store. Back in a bit!"
 bought_lemons1,bought_lemons2,🧒🏽,green,"There we go, lemons back in stock. Thanks, @🏪!"
 bought_lemons2,bought_lemons3,🏪,pink,"Happy to help a fellow businesswoman! 😹
@@ -44,8 +46,20 @@ saplings5,saplings6,🧒🏽,green,"What do you mean, @👁️‍🗨️? 😲"
 saplings6,,👁️‍🗨️,white,"Easiest just to show you, I'll be right over..."
 saplings7,saplings8,🧒🏽,green,"@🏪, I'm coming to buy one of your saplings!
 I have a magic potion that will make them grow super fast."
-saplings8,,🏪,pink,"I don't know what @👁️‍🗨️ told you, but I don't think that's a real thing. 😕
+saplings8,saplings9,🏪,pink,"I don't know what @👁️‍🗨️ told you, but I don't think that's a real thing. 😕
 I'll gladly sell you a sapling if you want one though. Just don't expect too much."
+saplings9,,🧒🏽,green,"Hmmm, I’m going to try it!"
+saplings10,saplings11,🧒🏽,green,"It’s working!
+Now this is more like it, it’s already almost grown!"
+saplings11,saplings12,🏪,pink,"...wait, really? What did you sell her, @👁️‍🗨️?"
+saplings12,saplings13,🧒🏽,green,@🏪 It was a gift! I didn’t need to pay anything.
+saplings13,saplings14,👁️‍🗨️,white,I just wan ted to hel p.
+saplings14,,🧒🏽,green,I’m going to buy so many of your saplings!
+more_potion1,more_potion2,🧒🏽,green,"@👁️‍🗨️ Huh, that bottle of potion you gave me is starting to look pretty empty… do you have more?"
+more_potion2,more_potion3,👁️‍🗨️,white,S ure! I will gladly sel l you more potion.
+more_potion3,more_potion4,🧒🏽,green,Yay! How much does it cost? I have money_amount saved up.
+more_potion4,more_potion5,👁️‍🗨️,white,"No need for any of that. W I want to trade. You bring me lemons, I give you more potion."
+more_potion5,,🧒🏽,green,That works even better!
 worried_store1,worried_store2,🏪,pink,"@everybody I’m not sure what is going on today, but I’m going to have to limit the amount of lemons people are allowed to buy to 1 bag each."
 worried_store2,worried_store3,🦜,,That’s so unfair!
 worried_store3,worried_store4,🏪,pink,"@🦜 if I wouldn’t, I’d be out in the next hour.
