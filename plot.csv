@@ -82,7 +82,7 @@ You can’t cut us off like this."
 worried_store7,,🏪,pink,"Wah, cut you off? You’re worrying me, @🐶.
 Also, I can’t stop you from chomping down on lemons as soon as you’ve paid for them, but, uh…
 (Yes, I saw you.)"
-more_magic1,more_magic2,🧒🏽,green,"@👁️‍🗨️So… when you said you had more magic, did you just mean more potion?"
+more_magic1,more_magic2,🧒🏽,green,"@👁️‍🗨️ So… when you said you had more magic, did you just mean more potion?"
 more_magic2,more_magic3,👁️‍🗨️,white,"No t at all, we have m uch magic. We can strengthen the magical potion for you and also pro vide you with other magic."
 more_magic3,more_magic4,🧒🏽,green,Make the potion stronger? 😲 Stronger how?
 more_magic4,more_magic5,👁️‍🗨️,white,"Every way. F aster growth, more lemon ade produced, tastier lemon ade."
@@ -91,10 +91,10 @@ more_magic6,,👁️‍🗨️,white,Yes p lease. I n eed more lemons.
 more_magic7,more_magic8,🧒🏽,green,Alright! I’ll start saving them up. ✨
 more_magic8,more_magic9,🧒🏽,green,"...when you say other magic, what kind of magic do you have?"
 more_magic9,more_magic10,👁️‍🗨️,white,A ll s orts. What w ould you like?
-more_magic10,more_magic11,🧒🏽,green,"Like, you even have magical animals?"
+more_magic10,more_magic11,🧒🏽,green,"All sorts? Like, even have magical animals?"
 more_magic11,more_magic12,👁️‍🗨️,white,"We can m ake those, de finitely."
 more_magic12,more_magic13,👁️‍🗨️,white,What k ind of animal do you want? It w ould take many lemons.
-more_magic13,more_magic14,🧒🏽,green,A unicorn of course!
+more_magic13,more_magic14,🧒🏽,green,"A unicorn, obviously!! 🎉"
 more_magic14,more_magic15,👁️‍🗨️,white,What is a uni corn?
 more_magic15,more_magic16,🧒🏽,green,"You don’t know what a unicorn is? 😲
 They’re the best!"
@@ -111,11 +111,17 @@ more_magic23,more_magic24,🧒🏽,green,"Yeah, that’s like one of the biggest
 more_magic24,,👁️‍🗨️,white,Then yes. A mill ion lemons.
 more_magic25,more_magic26,🧒🏽,green,That’s going to take a while to gather…
 more_magic26,,👁️‍🗨️,white,We will get started on researching how to make this unicorn while you d o.
+magic_speed_bought1,magic_speed_bought2,👁️‍🗨️,white,Th ank you for your p urchase? We are still wor king on the unicorn. The hooves are done.
+magic_speed_bought2,,👁️‍🗨️,white,This is di fferent to anything we have ev er done. It… inter ests us.
+magic_spread_bought1,magic_spread_bought2,👁️‍🗨️,white,That one sh ould help you a lot to make more lemons.
+magic_spread_bought2,,👁️‍🗨️,white,Which is go od because the unicorn is almost done. The cupcake pro duction was es pecially trick y.
 unicorn_bought1,unicorn_bought2,🧒🏽,green,"Oh my goodness, you’re perfect! ✨🦄✨
 You’re so big! And shiny! And kind!
 @everybody I’m writing this from the top of my own unicorn!"
-unicorn_bought2,unicorn_bought3,🧒🏽,green,...where is everybody anyway?
-unicorn_bought3,dev_notice_end_of_content,👩🏽‍✈️ ,red,"@🧒🏽, please tell me you’re safe!
+unicorn_bought2,unicorn_bought3,🧒🏽,green,"🤔 What to name you… Anastasia? Fernando?
+I can’t tell if you’re a boy unicorn or a girl unicorn… I should have asked for you to be able to talk!"
+unicorn_bought3,worried_mom,🧒🏽,green,...where is everybody anyway?
+worried_mom,dev_notice_end_of_content,👩🏽‍✈️ ,red,"@🧒🏽, please tell me you’re safe!
 My flight just got rerouted to São Filipe. Something about a mass riot on the island?
 Stay inside, lock the doors, write me back, please."
 dev_notice_end_of_content,,🌳,yellow,"<b>Not part of the narrative, developer notice</b>
