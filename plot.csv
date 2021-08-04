@@ -42,6 +42,20 @@ misc5,,🏍️,,"...I accidentally drank it all before lunch, I’ll come by for
 misc6,misc6b,🐶,,More lemonade! Give me more!
 misc6b,,🏍️,,"Are you doing okay there, @🐶?
 It is good though, I’ll admit I could go for some more as well."
+misc7,misc7b,🧒🏽,green,"Could @everybody please stop massing around the stall?
+Maybe form a queue or something?"
+misc7b,misc7c,🐶,,I’m sorry. Please don’t cut us off too.
+misc7c,misc7d,🏖️,,We’ll be calm! So calm!
+misc7d,misc7e,🧒🏽,green,"Then we’re not going to have a problem!
+I trust you to behave yourself."
+misc7e,,🏍️,,We will!
+misc8,,🧒🏽,green,"You all sure are thirsty, huh?
+I’m happy to sell you all lemonade, but I feel like a lot of you are just queuing up again right after I sold you your drink…"
+misc9,,🦜,,The lemonade is delicious and life is good! 💛
+misc10,,🐶,,I don’t think I want to drink anything else ever again! 💛
+misc11,misc11b,🏪,pink,"Okay, you weirdos. I’m closing up the shop for today.
+Not only am I out of lemons and limes, you also cleared me out of all juice, ice cream and anything else with a hint of lemon."
+misc11b,,🦜,,We have enough without you!
 saplings1,saplings2,🏪,pink,"If you're interested, @🧒🏽, I can also sell you some lemon tree saplings so you could grow your own lemons.
 
 They should do okay in your backyard if you water them regularly."
@@ -111,10 +125,15 @@ more_magic23,more_magic24,🧒🏽,green,"Yeah, that’s like one of the biggest
 more_magic24,,👁️‍🗨️,white,Then yes. A mill ion lemons.
 more_magic25,more_magic26,🧒🏽,green,That’s going to take a while to gather…
 more_magic26,,👁️‍🗨️,white,We will get started on researching how to make this unicorn while you d o.
-first_magic_upgrade_bought1,first_magic_upgrade_bought2,👁️‍🗨️,white,Th ank you for your p urchase? We are still wor king on the unicorn. The hooves are done.
-first_magic_upgrade_bought2,,👁️‍🗨️,white,This is di fferent to anything we have ev er done. It… inter ests us.
-second_magic_upgrade_bought1,second_magic_upgrade_bought2,👁️‍🗨️,white,That one sh ould help you a lot to make more lemons.
-second_magic_upgrade_bought2,,👁️‍🗨️,white,Which is go od because the unicorn is almost done. The cupcake pro duction was es pecially trick y.
+magic_speed1_bought,,👁️‍🗨️,white,It h as been fun to t inker with the old for mula.
+magic_speed2_bought,,👁️‍🗨️,white,"More speed, more lemons, y es."
+magic_spread1_bought,,👁️‍🗨️,white,That one sh ould help you a l ot to make more lemons.
+magic_spread2_bought,,👁️‍🗨️,white,"W e hope you will like that one, it should make things go a lot fas ter for you."
+magic_upgrade_bought1,magic_upgrade_bought1b,👁️‍🗨️,white,Th ank you for your p urchase? We are still wor king on the unicorn. The hooves are done.
+magic_upgrade_bought1b,,👁️‍🗨️,white,This is di fferent to anything we have ev er done. It… inter ests us.
+magic_upgrade_bought2,,👁️‍🗨️,white,"Unicorn is still in progress. The mane was fun, so many different strands."
+magic_upgrade_bought3,,👁️‍🗨️,white,W e think you w ill be pleased with the size of the unicorn. It is ma jestic? Maje stically large.
+magic_upgrade_bought4,,👁️‍🗨️,white,Which is go od because the unicorn is almost done. The cupcake pro duction was es pecially trick y.
 unicorn_bought1,unicorn_bought2,🧒🏽,green,"Oh my goodness, you’re perfect! ✨🦄✨
 You’re so big! And shiny! And kind!
 @everybody I’m writing this from the top of my own unicorn!"
