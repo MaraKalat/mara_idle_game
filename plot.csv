@@ -1,13 +1,13 @@
 code,next,avatar,colour,message
 start1,start2,🧒🏽,green,"Hello @everybody! I'm Carmo and I'm 11 years old!
 I'm selling lemonade in front of our house just off the praça, come buy some please! 💖"
-start2,,🦜,,"Hi @🧒🏽, That's so cute! I'll come take a look right now!"
-sale1,sale2,🦜,,"That hit the spot, highly recommended!"
+start2,,🦜,orange,"Hi @🧒🏽, That's so cute! I'll come take a look right now!"
+sale1,sale2,🦜,orange,"That hit the spot, highly recommended!"
 sale2,sale3,🧒🏽,green,"Thank you for your business, @🦜!"
 sale3,sale4,🐶,,"Hmm, I could use a refreshing drink too. ☀️ 👍
 I'll be there in a bit."
 sale4,sale5,🏖️,,Me too!
-sale5,,🧒🏽,green,"I’ve still got plenty! ...uh, kind of."
+sale5,,🧒🏽,green,"I’ve still got plenty! ...uh, kind of?"
 out_of_lemons1,,🧒🏽,green,"Yeah, I'm all out. 🤦
 Hang on everybody, I have to go grab some more from the store. Back in a bit!"
 bought_lemons1,bought_lemons2,🧒🏽,green,"There we go, lemons back in stock. Thanks, @🏪!"
@@ -15,12 +15,12 @@ bought_lemons2,bought_lemons3,🏪,pink,"Happy to help a fellow businesswoman! �
 
 We have plenty of other things in stock if your business takes off and you have more money to spend."
 bought_lemons3,bought_lemons4,🧒🏽,green,"Ooh, like what? 😲"
-bought_lemons4,bought_lemons5,🏪,pink,"Well, we have some very nice glitter glue pens so you can make a fancy sign for your lemonade business. ✨"
-bought_lemons5,bought_lemons6,🏪,pink,"And a nice, cheap solar charger for your phone so you don’t need to run inside when the battery gets low."
+bought_lemons4,bought_lemons5,🏪,pink,"Well, I’ve got some very nice glitter glue pens so you can make a fancy sign for your lemonade business. ✨"
+bought_lemons5,bought_lemons6,🏪,pink,"And a nice, affordable solar charger for your phone so you don’t need to run inside and charge it when the battery gets low."
 bought_lemons6,bought_lemons7,🏪,pink,"🤔 And I guess we also have an ice machine in stock if you’re running out of that a lot, that one’s kind of expensive though."
-bought_lemons7,bought_lemons_final,🧒🏽,green,"I already have a solar charger! Mom gave me one for my birthday, it’s so neat!
-Those other two sound very useful though.
-For my business."
+bought_lemons7,bought_lemons8,🧒🏽,green,"I already have a solar charger! Mom gave me one for my birthday, it’s so neat!
+Those other two sound very useful though."
+bought_lemons8,bought_lemons_final,🧒🏽,green,For my business.
 bought_lemons_final,,🏪,pink,🤣👍
 bought_glitter_pens1,bought_glitter_pens2,🏪,pink,"Thank you for stopping by and showing me the sign you drew with the glitter pens, @🧒🏽.
 It was very impressive!"
@@ -28,8 +28,9 @@ bought_glitter_pens2,bought_glitter_pens3,🧒🏽,green,I bet people will come 
 bought_glitter_pens3,,🏪,pink,"I wouldn’t be surprised, yeah. 🙂"
 bought_ice_machine1,bought_ice_machine2,🧒🏽,green,"That new ice machine is so fast! I really like it! ⛄
 Do you have another one?"
-bought_ice_machine2,,🏪,pink,"Just how much lemonade do you think you’re going to sell?! 🤣
+bought_ice_machine2,bought_ice_machine3,🏪,pink,"Just how much lemonade do you think you’re going to sell?! 🤣
 I’ll have to order in a new one, they take up quite a bit of space and don’t usually sell all that quickly. I’ll let you know when it comes in."
+bought_ice_machine3,,🧒🏽,green,Yes please! There are more people that want lemonade than I expected.
 misc1,misc1b,🏖️,,"Just what I needed after a day in the sun, thank you @🧒🏽!"
 misc1b,,🧒🏽,green,"You’re welcome, @🏖️!"
 misc2,misc2b,🐶,,"I just can't get enough of this lemonade, it's delicious.
@@ -37,7 +38,8 @@ misc2,misc2b,🐶,,"I just can't get enough of this lemonade, it's delicious.
 misc2b,,🧒🏽,green,Thank you! ✨
 misc3,,🏍️,,"Thanks for letting me fill up my thermos with lemonade, that should keep me going on my tour of the island today."
 misc4,misc4b,🏖️,,This really is excellent lemonade. 💛
-misc4b,,🦜,,I could do with another round as well…
+misc4b,misc4c,🦜,orange,I could do with another round as well…
+misc4c,,🧒🏽,green,There’s plenty for everybody!
 misc5,,🏍️,,"...I accidentally drank it all before lunch, I’ll come by for a refill in a bit!"
 misc6,misc6b,🐶,,More lemonade! Give me more!
 misc6b,,🏍️,,"Are you doing okay there, @🐶?
@@ -51,11 +53,11 @@ I trust you to behave yourself."
 misc7e,,🏍️,,We will!
 misc8,,🧒🏽,green,"You all sure are thirsty, huh?
 I’m happy to sell you all lemonade, but I feel like a lot of you are just queuing up again right after I sold you your drink…"
-misc9,,🦜,,The lemonade is delicious and life is good! 💛
+misc9,,🦜,orange,The lemonade is delicious and life is good! 💛
 misc10,,🐶,,I don’t think I want to drink anything else ever again! 💛
 misc11,misc11b,🏪,pink,"Okay, you weirdos. I’m closing up the shop for today.
 Not only am I out of lemons and limes, you also cleared me out of all juice, ice cream and anything else with a hint of lemon."
-misc11b,,🦜,,We have enough without you!
+misc11b,,🦜,orange,We have enough without you!
 saplings1,saplings2,🏪,pink,"If you're interested, @🧒🏽, I can also sell you some lemon tree saplings so you could grow your own lemons.
 
 They should do okay in your backyard if you water them regularly."
@@ -63,9 +65,9 @@ saplings2,saplings3,🧒🏽,green,"Oooh, that sounds like fun!
 Wouldn't that take a long time though?"
 saplings3,saplings4,🏪,pink,"Hah! I guess it would, at least 5-6 years.
 There are no magic shortcuts when it comes to stuff like this."
-saplings4,saplings5,👁️‍🗨️,white,That's not <b>entirely</b> true...
+saplings4,saplings5,👁️‍🗨️,white,That's not <b>en tirely</b> true...
 saplings5,saplings6,🧒🏽,green,"What do you mean, @👁️‍🗨️? 😲"
-saplings6,,👁️‍🗨️,white,"Easiest just to show you, I'll be right over..."
+saplings6,,👁️‍🗨️,white,I hope it will be of use to you.
 saplings7,saplings8,🧒🏽,green,"@🏪, I'm coming to buy one of your saplings!
 I have a magic potion that will make them grow super fast."
 saplings8,saplings9,🏪,pink,"I don't know what @👁️‍🗨️ told you, but I don't think that's a real thing. 😕
@@ -83,9 +85,9 @@ more_potion2,more_potion3,👁️‍🗨️,white,S ure! I will gladly sel l you
 more_potion3,more_potion4,🧒🏽,green,Yay! How much does it cost? I have money_amount saved up.
 more_potion4,more_potion5,👁️‍🗨️,white,"No need for any of that. W I want to trade.
 You bring me lemons, I give you more potion."
-more_potion5,,🧒🏽,green,"That works even better, the first trees are already growing lemons! ✨"
+more_potion5,,🧒🏽,green,"That works even better, the trees I planted are already growing a bunch of lemons! ✨"
 worried_store1,worried_store2,🏪,pink,"@everybody I’m not sure what is going on today, but I’m going to have to limit the amount of lemons people are allowed to buy to 1 bag per customer."
-worried_store2,worried_store3,🦜,,That’s so unfair!
+worried_store2,worried_store3,🦜,orange,That’s so unfair!
 worried_store3,worried_store4,🏪,pink,"@🦜 if I wouldn’t, I’d be out in the next hour.
 People have really been going crazy today…"
 worried_store4,worried_store5,🧒🏽,green,"I’m sorry, @🏪! I know I bought, like, a whole bunch of them."
@@ -125,15 +127,33 @@ more_magic23,more_magic24,🧒🏽,green,"Yeah, that’s like one of the biggest
 more_magic24,,👁️‍🗨️,white,Then yes. A mill ion lemons.
 more_magic25,more_magic26,🧒🏽,green,That’s going to take a while to gather…
 more_magic26,,👁️‍🗨️,white,We will get started on researching how to make this unicorn while you d o.
-magic_speed1_bought,,👁️‍🗨️,white,It h as been fun to t inker with the old for mula.
-magic_speed2_bought,,👁️‍🗨️,white,"More speed, more lemons, y es."
-magic_spread1_bought,,👁️‍🗨️,white,That one sh ould help you a l ot to make more lemons.
-magic_spread2_bought,,👁️‍🗨️,white,"W e hope you will like that one, it should make things go a lot fas ter for you."
+magic_speed1_bought,magic_speed1_bought_b,👁️‍🗨️,white,This should make things a lot f aster for you.
+magic_speed1_bought_b,,👁️‍🗨️,white,It h as been fun to t inker with the old for mula. We think w e can do more.
+magic_speed2_bought,,👁️‍🗨️,white,"Even more speed, more lemons, y es. This s hould suff ice."
+magic_spread1_bought,,👁️‍🗨️,white,We should have thought of a spreading agent ag es ag o. This sh ould help you a l ot to make more lemons.
+magic_spread2_bought,,👁️‍🗨️,white,No w the lemons th emselv es produce the reagent. This should sa ve you a lot of work!
 magic_upgrade_bought1,magic_upgrade_bought1b,👁️‍🗨️,white,Th ank you for your p urchase? We are still wor king on the unicorn. The hooves are done.
 magic_upgrade_bought1b,,👁️‍🗨️,white,This is di fferent to anything we have ev er done. It… inter ests us.
 magic_upgrade_bought2,,👁️‍🗨️,white,"Unicorn is still in progress. The mane was fun, so many different strands."
 magic_upgrade_bought3,,👁️‍🗨️,white,W e think you w ill be pleased with the size of the unicorn. It is ma jestic? Maje stically large.
 magic_upgrade_bought4,,👁️‍🗨️,white,Which is go od because the unicorn is almost done. The cupcake pro duction was es pecially trick y.
+no_more_selling1,no_more_selling2,🧒🏽,green,"Uh, I’m not really sure how to say this but I’m starting to feel bad about taking your money."
+no_more_selling2,no_more_selling3,🐶,,We want to give you our money! We need lemonade!
+no_more_selling3,no_more_selling4,🧒🏽,green,"But, like, you just want lemons right? I saw that a lot of you were also just buying them from @🏪."
+no_more_selling4,no_more_selling5,🦜,orange,So you’re saying you’ll directly sell us the lemons instead? That works for me!
+no_more_selling5,no_more_selling6,🏖️,,Yeah! That’s fine too!
+no_more_selling6,no_more_selling7,🧒🏽,green,"That’s not what I’m saying, no."
+no_more_selling7,no_more_selling8,🐶,,😱😱
+no_more_selling8,no_more_selling9,🦜,orange,We need them though.
+no_more_selling9,no_more_selling10,🧒🏽,green,"And you can have them! That’s what I’m trying to say.
+The lemon trees are producing so many lemons, I wouldn’t even notice if you just take the ones you want by yourself."
+no_more_selling10,no_more_selling11,🏍️,,We… can just take them ourselves?
+no_more_selling11,no_more_selling12,🧒🏽,green,Yeah!
+no_more_selling12,no_more_selling13,🐶,,As many as we want?
+no_more_selling13,no_more_selling_penultimate,🧒🏽,green,"As many as you need, sure."
+no_more_selling_penultimate,,🦜,orange,"I… Thank you, Carmo."
+no_more_selling_final,,🧒🏽,green,"It’s really nothing!
+There’s plenty for everybody. ...almost too much, really."
 unicorn_bought1,unicorn_bought2,🧒🏽,green,"Oh my goodness, you’re perfect! ✨🦄✨
 You’re so big! And shiny! And kind!
 @everybody I’m writing this from the top of my own unicorn!"
@@ -145,5 +165,6 @@ worried_mom,dev_notice_end_of_content,👩🏽‍✈️ ,white,"@🧒🏽, pleas
 My flight just got rerouted to São Filipe. Something about a mass riot on the island?
 Stay inside, lock the doors, write me back, please."
 dev_notice_end_of_content,,🌳,yellow,"<b>Not part of the narrative, developer notice</b>
-You made it to the end of chapter 1! Thank you so much for playing this in-progress version of my game, I truly appreciate it.
-I’d love to hear your thoughts on it, so feel free (and encouraged!) to reach out to me. I’m pretty pleased with the current state of the chapter, but am also sure it could be better."
+You made it to the end of chapter 1! This is all there is for now.
+Thank you so much for playing this in-progress version of my game, I truly appreciate it. I’d love to hear your thoughts on it, so feel free (and encouraged!) to reach out to me.
+I’m pretty pleased with the current state of the chapter, but am also sure it could be better."
