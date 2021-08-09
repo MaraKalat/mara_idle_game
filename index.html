@@ -1,133 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
+    <title>A Zesty Day 🍋 by Mara Kalat</title>
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
-<script src="script.js"></script>
+    <link rel="shortcut icon" type="image/png" href="lemon_1f34b.png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reenie+Beanie">
+    <script src="script.js"></script>
+    <script src="lib/papaparse.min.js"></script>
 </head>
 <body onload="init()">
-
-<h2>Mara's Idle Game</h2>
+<h2>A Zesty Day 🍋</h2>
 <hr>
+
+<!-- Story Notes -->
+<button class="collapsible">A note from mom on the kitchen counter</button>
+<div class="content" style="font-family: 'Shadows Into Light';">
+    <p>
+        Good morning Carmo, dear,<br><br>
+        I hope you slept well. I'll be back late tonight, but I hope you have a great time with your lemonade stand today.
+        I think it's such a fun idea, and I hope people come check it out! (Remember to be nice to them!)<br><br>
+
+        You remember how to make lemonade with the food processor, right?
+        Just add a lemon and a cup of ice from the fridge, press the button and watch it whirl!
+        (Don't put in forks or anything!)<br><br>
+
+        If you run out of lemons and lemonade, you can buy more around the corner.
+        (If the fridge runs out of ice, just wait a bit. You know how this works.)<br>
+        Love,<br>
+        Mom♡
+        <button
+            class="button"
+            style="float: right;"
+            onclick="this.parentElement.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+        >Close</button>
+    </p>
+</div>
+<button class="collapsible" id="magic_potion_note" hidden>A sloppily scribbled note</button>
+<div class="content" id="magic_potion_note_content" style="font-family: 'Reenie Beanie';" hidden>
+    <p>
+        To use the <s>Reagent</s>Magic Potion, add a small splash to a freshly planted sapling. Only works during the day on a su nny day.
+        <br><br>
+        <s>Definitely do not</s>You can also use it to make your lemon a de while using less ice.
+        Inst ead of using equal parts lemons and ice, you can in stead use:
+            <ul type = "circle">
+                <li>4 lemons
+                <li>1 cup of ice
+                <li><s>1 μL Reag</s> 1 drop of Potion
+            </ul>
+        Let me know if you want mor e M a gic ?
+        <button
+                class="button"
+                style="float: right;"
+                onclick="this.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+        >Close</button>
+</div>
+
+<!-- Inventory -->
+<p id="upgrades"></p>
 <p id=lemons_counter></p>
+<p id=ice_counter><progress id="ice_progress" value="0" max="200"></progress></p>
+<p id=lemonade_counter></p>
 <p id=money_counter></p>
-<p id=sapling_counter></p>
-<progress id="sapling_progress" value="0" max="1000" hidden></progress>
+<p id=magic_potion_counter></p>
+<p id=sapling_counter><progress id="sapling_progress" value="0" max="1000"></progress></p>
 <p id=tree_counter></p>
 
-<button
-        id="sell_lemonade_button"
-        class="button"
-        onclick="sell_lemonade()"
-        title="Turns 1 lemon into lemonade and sell it for 1 money"
->🍹 Sell Lemonade</button>
-<progress
-        id="sell_lemonade_progress"
-        value="0"
-        max="100"
-></progress>
-<input
-        type="checkbox"
-        id="keep_selling_lemonade"
-        title="Keep selling lemonade until you run out of lemons"
->
-<label
-        for="keep_selling_lemonade"
-        title="Keep selling lemonade until you run out of lemons"
->Keep selling?</label>
+<!-- Action Table -->
+<table id="action_table">
+    <tr>
+        <th>Action</th>
+        <th>Progress</th>
+        <th>Repeaters</th>
+    </tr>
+    <tr>
+        <td><button
+                id="make_lemonade_button"
+                class="button"
+                onclick="make_lemonade()"
+                title="Turns 1 lemon and 1 ice into 2 glasses of lemonade"
+        >🍹 Make Lemonade</button></td>
+        <td><progress
+                id="make_lemonade_progress"
+                value="0"
+                max="10"
+        ></progress></td>
+        <td><input
+                type="checkbox"
+                id="keep_making_lemonade"
+                checked
+                title="Keep making lemonade until you run out of lemons or ice"
+        >
+        <label
+                for="keep_making_lemonade"
+                title="Keep making lemonade until you run out of lemons or ice"
+        >Keep making?</label>
+        </td>
+    </tr>
+    <tr id="make_magically_line" hidden>
+        <td><button
+                id="make_lemonade_button_magic"
+                class="button"
+                onclick="make_lemonade('magic')"
+                title="Turns 4 lemons, 1 ice and 1mL of magic potion into 8 glasses of lemonade"
+        >⚗️ Make Lemonade</button></td>
+        <td><progress
+                id="make_lemonade_progress_magic"
+                value="0"
+                max="10"
+        ></progress></td>
+        <td><input
+                type="checkbox"
+                id="keep_making_lemonade_magic"
+                checked
+                title="Keep making lemonade until you run out of lemons, ice or magic potion"
+        >
+            <label
+                    for="keep_making_lemonade_magic"
+                    title="Keep making lemonade until you run out of lemons, ice or magic potion"
+            >Keep making?</label>
+        </td>
+    </tr>
+    <tr id="sell_line" hidden>
+        <td><button
+                id="sell_lemonade_button"
+                class="button"
+                onclick="sell_lemonade()"
+                title="Sell 1 lemonade for 0.5 money"
+        >💶 Sell Lemonade</button></td>
+        <td><progress
+                id="sell_lemonade_progress"
+                value="0"
+                max="100"
+        ></progress></td>
+        <td><input
+                type="checkbox"
+                id="keep_selling_lemonade"
+                title="Keep selling lemonade until you run out"
+        >
+        <label
+                for="keep_selling_lemonade"
+                title="Keep selling lemonade until you run out"
+        >Keep selling?</label></td>
+    </tr>
+</table>
 <br>
 
-<button
-        id="buy_lemons_button"
-        class="button"
-        onclick="buy_lemons()"
-        title="Go buy 10 more lemons for 5 money"
-        hidden
->🍋 Buy Lemons</button>
-<button
-        id="buy_sapling_button"
-        class="button"
-        onclick="buy_sapling()"
-        title="Go buy a lemon tree sapling for 25 money"
-        hidden
->🌱 Buy Sapling</button>
-
-
+<!-- Shopping Options -->
+<div id="shopping_tabs" hidden>
+    <!-- Tab links -->
+    <div class="tab">
+        <button id="🏪 button" class="tab_links" onclick="switch_shop_tab(event, '🏪')">🏪 General Store</button>
+        <button id="🏚️ button" class="tab_links" onclick="switch_shop_tab(event, '🏚️')" hidden>🏚️ Magical Store</button>
+    </div>
+    <!-- Tab content -->
+    <div id="🏪" class="tab_content">
+        <table style="margin: 10px">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Buy?</th>
+            </tr>
+            <tr>
+                <td>🍋 Lemons</td>
+                <td id="lemon_price" align='right'></td>
+                <td id="lemon_amount"></td>
+                <td>
+                    <button id="buy_lemons_button" class="button" onclick="buy_lemons()">Buy x1</button>
+                    <button id="buy_lemons_button5" class="button" onclick="buy_lemons(5)">Buy x5</button>
+                </td>
+            </tr>
+            <tr id="sapling_row" hidden>
+                <td>🌱 Sapling</td>
+                <td id="sapling_price" align='right'></td>
+                <td>A lemon tree sapling</td>
+                <td>
+                    <button id="buy_sapling_button" class="button" onclick="buy_sapling()">Buy x1</button>
+                    <button id="buy_sapling_button5" class="button" onclick="buy_sapling(5)">Buy x5</button>
+                </td>
+            </tr>
+            <tr id="glitter_pens_row" hidden>
+                <td>🖍️ Glitter Pens</td>
+                <td id="glitter_pens_price" align='right'></td>
+                <td>Glitter glue pens to make a fancy sale sign</td>
+                <td><button id="buy_glitter_pens" class="button" onclick="buy_glitter_pens()">Buy</button></td>
+            </tr>
+            <tr id="ice_machine_row" hidden>
+                <td>❄️️ Ice Machine</td>
+                <td id="ice_machine_price" align='right'></td>
+                <td>A fancy ice cube machine</td>
+                <td><button id="buy_ice_machine" class="button" onclick="buy_ice_machine()">Buy</button></td>
+            </tr>
+        </table>
+    </div>
+    <div id="🏚️" class="tab_content">
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Buy?</th>
+            </tr>
+            <tr id="potion_buy_line">
+                <td>⚗️ Magic Potion</td>
+                <td id="potion_price" align='right'>500 🍋</td>
+                <td>1000mL of magic potion to grow trees qu i ckly</td>
+                <td>
+                    <button id="buy_potion" class="button" onclick="buy_potion()">Buy x1</button>
+                    <button id="buy_potion5" class="button" onclick="buy_potion(5)">Buy x5</button>
+                </td>
+            </tr>
+            <tr id="magic_speed_upgrade_row1" hidden>
+                <td>🧪 Magic Speed Upgrade</td>
+                <td align='right'>1,500 🍋</td>
+                <td>Fast er tree growth, f aster sales, faste r production</td>
+                <td><button id="buy_magic_speed1" class="button" onclick="buy_magic_speed(1)">Upgrade</button></td>
+            </tr>
+            <tr id="magic_speed_upgrade_row2" hidden>
+                <td>🧪 Magic Speed Upgrade Mk. 2</td>
+                <td align='right'>6,000 🍋</td>
+                <td>Even f aster tree growth and faste r lemon pro duction</td>
+                <td><button id="buy_magic_speed2" class="button" onclick="buy_magic_speed(2)">Upgrade</button></td>
+            </tr>
+            <tr id="magic_spread_upgrade_row1" hidden>
+                <td>🦠 Magic Spread Upgrade</td>
+                <td align='right'>2,500 🍋</td>
+                <td>Tr ees grow more lemons and also new sapl ings</td>
+                <td><button id="buy_magic_spread1" class="button" onclick="buy_magic_spread(1)">Upgrade</button></td>
+            </tr>
+            <tr id="magic_spread_upgrade_row2" hidden>
+                <td>🦠 Magic Spread Upgrade Mk. 2</td>
+                <td align='right'>10,000 🍋</td>
+                <td>P arallel sapling growth and no l onger re quire potion</td>
+                <td><button id="buy_magic_spread2" class="button" onclick="buy_magic_spread(2)">Upgrade</button></td>
+            </tr>
+            <tr id="unicorn_row" hidden>
+                <td>🦄 A "Unicorn"</td>
+                <td align='right'>1,000,000 🍋</td>
+                <td>W e think we got al l reque sted fea tures</td>
+                <td><button id="buy_unicorn" class="button" onclick="buy_unicorn()">Buy</button></td>
+            </tr>
+        </table>
+    </div>
+</div>
 <br>
-<div class="msg-box">
-    <header><div align="center" style="font-size:20px"><b>💬 Nova Sintra City Group Chat</b><hr></div></header>
-    <div id="plot17" class="bubble pink">
-        <div style="font-size:30px; float:left">🏪</div>
-        I don't know what <highlight>@👁️‍🗨️</highlight> told you, but I don't think that's a real thing. 😕<br>
-        I'll gladly sell you a sapling if you want one though. Just don't expect too much.
-    </div>
-    <div id="plot16" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        <highlight>@🏪</highlight>, I'm coming to buy one of your saplings!
-        I have a magic potion that will make them grow super fast.
-    </div>
-    <div id="plot15" class="bubble white">
-        <div style="font-size:30px; float:left">👁️‍🗨️</div>
-        Easiest just to show you, I'll be right over...
-    </div>
-    <div id="plot14" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        What do you mean, <highlight>@👁️‍🗨️</highlight>? 😲
-    </div>
-    <div id="plot13" class="bubble white">
-        <div style="font-size:30px; float:left">👁️‍🗨️</div>
-        That's not <b>entirely</b> true...
-    </div>
-    <div id="plot12" class="bubble pink">
-        <div style="font-size:30px; float:left">🏪</div>
-        Hah! I guess it would, at least 5-6 years.<br>There are no magic shortcuts when it comes to stuff like this.
-    </div>
-    <div id="plot11" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        Oooh, that sounds like fun!<br>Wouldn't that take a long time though?
-    </div>
-    <div id="plot10" class="bubble pink">
-        <div style="font-size:30px; float:left">🏪</div>
-        If you're interested, <highlight>@🧒🏽</highlight>,
-        I can also sell you some lemon tree saplings so you could grow your own lemons.<br><br>
-        They should do okay in your backyard if you water them regularly.
-    </div>
-    <div id="plot9" class="bubble">
-        <div style="font-size:30px; float:left">🦜</div>
-        I just can't get enough of this lemonade, it's delicious.<br>🍹✨
-    </div>
-    <div id="plot8" class="bubble pink">
-        <div style="font-size:30px; float:left">🏪</div>
-        Happy to help a fellow businesswoman! 😹
-    </div>
-    <div id="plot7" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        There we go, lemons back in stock. Thanks, <highlight>@🏪</highlight>!
-    </div>
-    <div id="plot6" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        Uh oh, I'm out of lemons. Hang on, I have to go grab some more from the store. Back in a bit!
-    </div>
-    <div id="plot5" class="bubble">
-        <div style="font-size:30px; float:left">🐶</div>
-        Hmm, I could use a refreshing drink too. ☀️ 👍 <br>I'll be there in a bit.
-    </div>
-    <div id="plot4" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        Thank you for your business, <highlight>@🦜</highlight>!
-    </div>
-    <div id="plot3" class="bubble">
-        <div style="font-size:30px; float:left">🦜</div>
-        That hit the spot, highly recommended!
-    </div>
-    <div id="plot2" class="bubble">
-        <div style="font-size:30px; float:left">🦜</div>
-        Hi <highlight>@🧒🏽</highlight>, That's so cute! I'll come take a look right now!
-    </div>
-    <div id="plot1" class="bubble bubble-alt green">
-        <div style="font-size:30px; float:right">🧒🏽</div>
-        Hello <highlight>@everybody</highlight>! I'm Carmo and I'm 11 years old!<br>
-        I'm selling lemonade in front of our house just off the praça, come buy some please! 💖
-    </div>
+
+<!-- Group Chat Box -->
+<div class="msg-box" id="plot-box">
+    <header id="plot-header">
+        <div align="center" style="font-size:20px"><b>💬 Nova Sintra City Group Chat</b><span style="float:right;">📶 🔋</span><hr></div>
+    </header>
+    <div class="bubble white"><div style="font-size:30px; float:left">👩🏽‍✈️</div><b>DM from "Mom (work phone)"</b><br>I've added you to the big group chat, but won't have time to check up on you while I'm working.<br>I trust you to behave yourself. (Please) Love, mom.</div>
+</div>
+
+<!-- Fancy floating footer -->
+<div class="footer">
+    <table width="100%"><tr><td></td><td>A game by Mara Kalat</td></tr>
+    <tr><td align="left"><div title="Scroll to the top of the page" onclick="document.documentElement.scrollTop = 0;" style="cursor: pointer">⏫</div></td>
+        <td><a href="mailto:a.zesty.day@gmail.com">Feedback? Email me!</a></td></tr>
+    </table>
 </div>
 </body>
 </html>
