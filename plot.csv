@@ -163,11 +163,33 @@ I can’t tell if you’re a boy unicorn or a girl unicorn…
 Is that even a thing for unicorns?
 
 I should have asked for you to be able to talk!",
-unicorn_bought3,worried_mom,🧒🏽,green,...where is everybody anyway?,
-worried_mom,dev_notice_end_of_content,👩🏽‍✈️ ,white,"@🧒🏽, please tell me you’re safe!
+unicorn_bought3,worried_mom1,🧒🏽,green,...where is everybody anyway?,
+worried_mom1,worried_mom2,👩🏽‍✈️ ,white,"@🧒🏽, please tell me you’re safe!
 My flight just got rerouted to São Filipe. Something about a mass riot on the island?
 Stay inside, lock the doors, write me back, please.",...maybe it’s time to call it a day.
-dev_notice_end_of_content,,🌳,yellow,"<b>Not part of the narrative, developer notice</b>
-You made it to the end of chapter 1! This is all there is for now.
-Thank you so much for playing this in-progress version of my game, I truly appreciate it. I’d love to hear your thoughts on it, so feel free (and encouraged!) to reach out to me.
-I’m pretty pleased with the current state of the chapter, but am also sure it could be better.",
+worried_mom2,worried_mom3,🧒🏽,green,"Hey mom! Is that what’s going on? I’m fine, don’t worry. There’s nobody around here.
+I’ll take my new friend and go inside. Let me know when you’re coming back please!",
+worried_mom3,worried_mom4,📵,red,"Message not sent.
+Please try again later.",
+worried_mom4,worried_mom5,🧒🏽,green,"Mom? The phone’s being weird. I’m okay and at home now. I’ve locked the doors.
+I’m eating the leftovers in the fridge like you said, they’re nice.",
+worried_mom5,worried_mom6,📵,red,"Message not sent.
+Please try again later.",
+worried_mom6,worried_mom7,🆘,red,"This is a mandatory shelter-in-place order for the island of Brava.
+Go inside immediately and remain inside your house or building.
+Gather radio, flashlight, food and water and await further instructions.",
+worried_mom7,worried_mom8,🧒🏽,green,"Well that doesn’t sound great. Did everybody get that one?
+I guess I’ll go to bed then? Maybe there’ll be news in the morning.",...maybe it’s time to call it a day.
+worried_mom8,dev_notice_end_of_chapter,📵,red,"Message not sent.
+Please try again later.",
+dev_notice_end_of_chapter,,🌳,yellow,"<b>Not part of the narrative, developer notice</b>
+You made it to the end of chapter 1! Great job causing some kind of apocalypse.
+Press here to start chapter 2 when you’re ready.
+
+<button class=""button"" onclick=""start_chapter_two()"">Start Chapter 2</button>
+
+Alternatively you can also come back later and press ⏭️ at the bottom of the page to skip the first chapter and go straight into chapter 2. (Eventually I’ll figure out how cookie-based save games work, but it is not today.)
+
+Thank you so much for playing this first chapter, I truly appreciate it. I’d love to hear your thoughts on it, so feel free (and encouraged!) to reach out to me.
+I’m pretty pleased with the current state of the chapter, but am also sure it could be better.
+I’ll see you again in chapter 2!",Press the Start Chapter 2 button to continue the story.
