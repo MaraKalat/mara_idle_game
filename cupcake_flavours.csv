@@ -1,251 +1,229 @@
 type,name,energy_cost
-cake,Almond,18
-cake,Almond Coconut,38
-cake,Apple,30
-cake,Banana,30
-cake,Blueberry,30
-cake,Blueberry Swirl,32
-cake,Blueberry Swirl Crumb,34
-cake,Bread Pudding,18
-cake,Butter,16
-cake,Carrot,30
+cake,Vanilla,10
 cake,Chocolate,12
-cake,Chocolate Cayenne,17
 cake,Cinnamon,14
-cake,Cinnamon Apple,34
+cake,Creamsicle-flavoured,14
+cake,Hot Pink Cotton Candy,14
+cake,Lavender-flavoured,14
+cake,Orange-sherbet-flavoured,14
+cake,Vanilla Funfetti,14
+cake,Butter,16
 cake,Cinnamon Crumb,16
 cake,Cinnamon Spice,16
 cake,Cinnamon Swirl,16
-cake,Coconut,30
-cake,Creamsicle-flavoured,14
-cake,Gingerbread,32
-cake,Hot Pink Cotton Candy,14
-cake,Lavender-flavoured,14
-cake,Lemon,30
-cake,Lemon & Lime,31
-cake,Lime,30
+cake,Chocolate Cayenne,17
+cake,Almond,18
+cake,Bread Pudding,18
 cake,Marble,18
-cake,Orange-sherbet-flavoured,14
-cake,Peanut Butter,22
 cake,Pecan,18
-cake,Pumpkin,30
-cake,Red Velvet,32
-cake,Strawberry,30
-cake,Strawberry Swirl,32
-cake,Sweet Potato,30
-cake,Vanilla,10
-cake,Vanilla Funfetti,14
 cake,Walnut,18
-filling,Apple Cider* Pastry Cream,70
-filling,Apple Compote,30
-filling,Banana Pastry Cream,70
-filling,Bourbon* Sauce,115
-filling,Brownie Batter,70
-filling,Buttermilk Pastry Cream,47
-filling,Butterscotch*,51
-filling,Caramel,35
-filling,Caramel & Green Marshmallow,162
-filling,Caramel Nougat,85
-filling,Cheesecake,140
-filling,Cherry,30
-filling,Chocolate Bourbon* Sauce,118
-filling,Chocolate Ganache,45
-filling,Chocolate Pastry Cream,45
-filling,Chocolate Pudding,55
-filling,Chocolate Whiskey* Sauce,117
-filling,Cinnamon Peach Compote,34
-filling,Coconut Cream,50
-filling,Coffee Cream,52
-filling,Cookie Butter,45
-filling,Cookie Dough,70
-filling,Cranberry Compote,30
-filling,Cream Cheese,40
-filling,Dulce de Leche,163
-filling,Eggnog* Pastry Cream,220
-filling,Espresso Pastry Cream,54
-filling,Fluffy Cream,40
-filling,Grape Jelly,70
-filling,Key Lime Curd,40
-filling,Lemon Chiffon,45
-filling,Lemon Curd,40
-filling,Liqueur* Pastry Cream,60
-filling,Mango Compote,30
-filling,Mango Puree,30
-filling,Marshmallow Fluff,120
-filling,Mixed Berry Compote,45
+cake,Peanut Butter,22
+cake,Apple,30
+cake,Banana,30
+cake,Blueberry,30
+cake,Carrot,30
+cake,Coconut,30
+cake,Lemon,30
+cake,Lime,30
+cake,Pumpkin,30
+cake,Strawberry,30
+cake,Sweet Potato,30
+cake,Lemon & Lime,31
+cake,Blueberry Swirl,32
+cake,Gingerbread,32
+cake,Red Velvet,32
+cake,Strawberry Swirl,32
+cake,Blueberry Swirl Crumb,34
+cake,Cinnamon Apple,34
+cake,Almond Coconut,38
 filling,No,0
-filling,Nougat,50
+filling,Peanut Butter,18
+filling,Apple Compote,30
+filling,Cherry Compote,30
+filling,Cranberry Compote,30
+filling,Mango Compote,30
+filling,Peach Compote,30
+filling,Pineapple Pieces,30
+filling,Raspberry Compote,30
+filling,Strawberry Compote,30
+filling,Cinnamon Peach Compote,34
+filling,Caramel,35
+filling,Cream Cheese,40
+filling,Fluffy Cream,40
+filling,Key Lime Curd,40
+filling,Lemon Curd,40
 filling,Passion Fruit Curd,40
 filling,Pastry Cream,40
-filling,Peach Compote,30
-filling,Peanut Butter,18
-filling,Pecan Cheesecake,158
-filling,Pineapple,30
-filling,Pineapple Curd,50
+filling,Strawberry Pudding,40
+filling,Toffee,40
+filling,White Chocolate Ganache,44
+filling,Chocolate Ganache,45
+filling,Chocolate Pastry Cream,45
+filling,Cookie Butter,45
+filling,Lemon Chiffon,45
+filling,Mixed Berry Compote,45
+filling,Buttermilk Pastry Cream,47
+filling,Coconut Cream,50
+filling,Nougat,50
+filling,Butterscotch*,51
+filling,Pumpkin Spice Pastry Cream,51
+filling,Espresso Pastry Cream,54
+filling,Chocolate Pudding,55
+filling,Spiced Chocolate Pudding,59
+filling,Liqueur* Pastry Cream,60
+filling,Apple Cider* Pastry Cream,70
+filling,Banana Pastry Cream,70
+filling,Brownie Batter,70
+filling,Cookie Dough,70
+filling,Grape Jelly,70
+filling,Strawberry Jelly,70
+filling,Caramel Nougat,85
+filling,Rum* Caramel Sauce,110
+filling,Bourbon* Sauce,115
+filling,Chocolate Whiskey* Sauce,117
+filling,Chocolate Bourbon* Sauce,118
+filling,Marshmallow Fluff,120
 filling,Pink Marshmallow Fluff,127
+filling,Tequila* Lime Curd,137
+filling,Cheesecake,140
 filling,Pretzel Pieces,140
 filling,Pumpkin Pie,140
-filling,Pumpkin Spice Pastry Cream,51
-filling,Raspberry Compote,30
-filling,Rum* Caramel Sauce,110
-filling,Spiced Chocolate Pudding,59
-filling,Strawberry & Lemon Curd,60
-filling,Strawberry & Raspberry Compote,60
-filling,Strawberry Compote,30
-filling,Strawberry Jelly,70
-filling,Strawberry Pudding,40
-filling,Tequila* Lime Curd,137
-filling,Toffee,40
+filling,Pecan Cheesecake,158
+filling,Dulce de Leche,163
 filling,Toffee Pecan Cheesecake,170
-filling,White Chocolate Ganache,44
-frosting,Almond Buttercream,78
+filling,Eggnog* Pastry Cream,220
+frosting,No,0
+frosting,Caramel,25
+frosting,Salted Caramel,27
+frosting,Whipped Peanut Butter,40
+frosting,Caramel Swirl,41
+frosting,Peanut Butter,43
+frosting,Chocolate Ganache,60
+frosting,Cream Cheese,60
+frosting,Vanilla Buttercream,60
+frosting,Whipped Cream,60
+frosting,Green Vanilla Buttercream,61
+frosting,White Chocolate Buttercream,62
+frosting,Chocolate Buttercream,64
+frosting,Cinnamon Cream Cheese,64
+frosting,Dark Chocolate Ganache,66
+frosting,Cinnamon Whipped Cream,68
+frosting,Chocolate Cream Cheese,70
+frosting,Rainbow Chip,70
+frosting,Chocolate Swirl Buttercream,74
+frosting,Toffee Buttercream,74
 frosting,Almond Whipped Cream,76
-frosting,Apple Cider* Buttercream,124
+frosting,Pumpkin Spice Whipped Cream,77
+frosting,Almond Buttercream,78
 frosting,Banana Buttercream,80
 frosting,Blackberry Buttercream,80
-frosting,Blue Cotton Candy,40
-frosting,Blue Raspberry Buttercream,80
 frosting,Blueberry Buttercream,80
-frosting,Butterscotch*,27
-frosting,Caramel,25
-frosting,Caramel Buttercream,85
-frosting,Caramel Cream Swirl,85
-frosting,Caramel Swirl,41
 frosting,Cherry Buttercream,80
-frosting,Cherry Lemon Swirl Buttercream,100
-frosting,Chocolate Buttercream,64
-frosting,Chocolate Chip Cannoli,174
-frosting,Chocolate Cream Cheese,70
-frosting,Chocolate Ganache,60
-frosting,Chocolate Swirl Buttercream,74
-frosting,Chocolate Whipped Cream,72
-frosting,Cinnamon Cream Cheese,64
-frosting,Cinnamon Whipped Cream,68
-frosting,Coconut Rum* Whipped Cream,107
-frosting,Cookie Buttercream,92
-frosting,Cookie Dough,114
-frosting,Cookie Vanilla Swirl Buttercream,134
-frosting,Cream Cheese,60
-frosting,Custard-flavoured Buttercream,70
-frosting,Dark Chocolate Ganache,66
-frosting,Dulce de Leche Buttercream,122
-frosting,Egg Custard Buttercream,95
-frosting,Espresso Toffee Whipped Cream,98
-frosting,Green Vanilla Buttercream,61
-frosting,Honey Cream Cheese,124
 frosting,Key Lime Buttercream,80
 frosting,Lemon Buttercream,80
 frosting,Mango Buttercream,80
-frosting,Maple Buttercream,70
-frosting,Marshmallow Buttercream,130
-frosting,Marshmallow Whipped Cream,92
-frosting,Mocha Buttercream,96
-frosting,Orange Zest Buttercream,84
 frosting,Passion Fruit Buttercream,80
 frosting,Peach Buttercream,80
-frosting,Peanut Butter,43
-frosting,Peanut Butter Jelly Swirl,121
-frosting,Pineapple Blackberry Swirl,110
-frosting,Pineapple Strawberry Swirl,99
-frosting,Pink White Swirl Buttercream,84
-frosting,Pumpkin Spice Whipped Cream,77
-frosting,Rainbow Chip,70
 frosting,Raspberry Buttercream,80
-frosting,Raspberry Lemonade Buttercream,92
-frosting,Raspberry Lime Swirl Buttercream,100
-frosting,Salted Caramel,27
-frosting,Salted Caramel Buttercream,87
-frosting,Spiced Rum* Buttercream,102
 frosting,Strawberry Buttercream,80
-frosting,Sugar Cookie Buttercream,140
-frosting,Tequila* Lime,89
-frosting,Toffee Buttercream,74
-frosting,Toffee Rum* Buttercream,162
-frosting,Vanilla Buttercream,60
+frosting,Orange Zest Buttercream,84
+frosting,Caramel Buttercream,85
+frosting,Caramel Cream Swirl,85
 frosting,Vanilla Orange Swirl,86
-frosting,Whipped Cream,60
-frosting,Whipped Peanut Butter,40
-frosting,White Chocolate Buttercream,62
-frosting,Yellow Whiskey*,97
-topping,Almond Slices,32
-topping,Banana Chips,30
-topping,Brownie Bits,82
-topping,Butterscotch* Chips,43
-topping,Candied Lemon Peel,47
-topping,Candied Pecans,42
-topping,Caramel Chips,28
-topping,Caramel Drizzle,30
-topping,Caramelised Sugar,32
-topping,Chocolate Bark,55
-topping,Chocolate Chips,40
-topping,Chocolate Curls,50
-topping,Chocolate Drizzle,40
-topping,Chocolate Sprinkles,45
-topping,Chopped Hazelnuts,32
-topping,Chopped Pecans,32
+frosting,Salted Caramel Buttercream,87
+frosting,Cookie Buttercream,92
+frosting,Mocha Buttercream,96
+frosting,Espresso Toffee Buttercream,98
+frosting,Pineapple Strawberry Swirl,99
+frosting,Cherry Lemon Swirl,100
+frosting,Spiced Rum* Buttercream,102
+frosting,Coconut Rum* Buttercream,107
+frosting,Pineapple Blackberry Swirl,110
+frosting,Peanut Butter Jelly Swirl,121
+frosting,Dulce de Leche Buttercream,122
+frosting,Apple Cider* Buttercream,124
+frosting,Honey Cream Cheese,124
+frosting,Marshmallow Buttercream,130
+frosting,Cookie Swirl Buttercream,134
+frosting,Sugar Cookie Buttercream,140
+frosting,Toffee Rum* Buttercream,162
+frosting,Chocolate Chip Cannoli,174
+topping,Sea Salt,4
 topping,Cinnamon,8
-topping,Cinnamon Drizzle,48
-topping,Cinnamon Sugar,48
-topping,Coconut Flakes,30
-topping,Cookie Crumbs,80
-topping,Crushed Peanut Butter Cups,110
-topping,Crushed Peanuts,32
-topping,Crushed Wafers,72
-topping,Crushed Walnuts,32
-topping,Dark Chocolate Drizzle,42
-topping,Dollop of Whipped Cream,60
-topping,Gingerbread Sprinkles,60
-topping,Gingersnap Crumbs,82
-topping,Glitter,20
-topping,Gold Glitter,50
-topping,Gold Sprinkles,50
-topping,Graham Cracker Crumbs,77
 topping,Green Sprinkles,25
-topping,Gummy Bears,72
+topping,Orange Sprinkles,25
+topping,Purple Sprinkles,25
+topping,Red Sprinkles,25
+topping,Yellow Sprinkles,25
+topping,Caramel Chips,28
+topping,Banana Chips,30
+topping,Caramel Drizzle,30
+topping,Coconut Flakes,30
 topping,Lavender Flakes,30
 topping,Maple Drizzle,30
-topping,Marasino Cherry,50
-topping,Marshmallow Drizzle,110
-topping,Mini Marshmallows,105
-topping,Oats,44
-topping,Orange Sprinkles,25
 topping,Orange Sugar,30
-topping,Pretzel Pieces,140
-topping,Pumpkin Pie Spice,40
-topping,Purple Sprinkles,25
 topping,Rainbow Sprinkles,30
-topping,Red Sprinkles,25
-topping,Sea Salt,4
-topping,Shredded Coconut,31
 topping,Slice of Lemon,30
 topping,Slice of Lime,30
 topping,Sliced Strawberry,30
-topping,Sugar Pearls,40
-topping,Toffee Bits,54
-topping,Toffee Drizzle,56
-topping,White Chocolate Bark,54
+topping,Shredded Coconut,31
+topping,Almond Slices,32
+topping,Chopped Hazelnuts,32
+topping,Chopped Pecans,32
+topping,Crushed Peanuts,32
+topping,Crushed Walnuts,32
 topping,White Chocolate Drizzle,39
-topping,Yellow Sprinkles,25
-wrapper,Floral Pattern,0.3
-wrapper,Green Lace Filigree Cutouts,0.5
-wrapper,Iridescent Mermaid Scale,2
-wrapper,Orange Lace Filigree Cutouts,0.5
+topping,Chocolate Chips,40
+topping,Chocolate Drizzle,40
+topping,Pumpkin Pie Spice,40
+topping,Sugar Pearls,40
+topping,Candied Pecans,42
+topping,Dark Chocolate Drizzle,42
+topping,Butterscotch* Chips,43
+topping,Chocolate Sprinkles,45
+topping,Candied Lemon Peel,47
+topping,Cinnamon Drizzle,48
+topping,Cinnamon Sugar,48
+topping,Chocolate Curls,50
+topping,Gold Glitter,50
+topping,Gold Sprinkles,50
+topping,Marasino Cherry,50
+topping,Toffee Bits,54
+topping,White Chocolate Bark,54
+topping,Chocolate Bark,55
+topping,Toffee Drizzle,56
+topping,Dollop of Whipped Cream,60
+topping,Gingerbread Sprinkles,60
+topping,Crushed Wafers,72
+topping,Gummy Bears,72
+topping,Graham Cracker Crumbs,77
+topping,Cookie Crumbs,80
+topping,Brownie Bits,82
+topping,Gingersnap Crumbs,82
+topping,Mini Marshmallows,105
+topping,Crushed Peanut Butter Cups,110
+topping,Marshmallow Drizzle,110
+topping,Pretzel Pieces,140
 wrapper,Plain White,0.1
-wrapper,Polka Dot Blue,0.18
-wrapper,Polka Dot Pink,0.18
-wrapper,Polka Dot Red,0.18
-wrapper,Polka Dot Yellow,0.18
-wrapper,Purple Lace Filigree Cutouts,0.5
-wrapper,Rainbow Gradient,0.22
-wrapper,Rainbow Pattern,0.3
-wrapper,Silver & Gold Glitter,0.6
 wrapper,Solid Blue,0.15
-wrapper,Solid Gold,0.3
 wrapper,Solid Green,0.15
 wrapper,Solid Orange,0.15
 wrapper,Solid Pink,0.15
 wrapper,Solid Purple,0.15
 wrapper,Solid Red,0.15
-wrapper,Solid Silver,0.3
 wrapper,Solid Yellow,0.15
+wrapper,Polka Dot Blue,0.18
+wrapper,Polka Dot Pink,0.18
+wrapper,Polka Dot Red,0.18
+wrapper,Polka Dot Yellow,0.18
+wrapper,Rainbow Gradient,0.22
+wrapper,Floral Pattern,0.3
+wrapper,Rainbow Pattern,0.3
+wrapper,Solid Gold,0.3
+wrapper,Solid Silver,0.3
 wrapper,Unicorn Print,0.3
+wrapper,Green Lace Filigree Cutouts,0.5
+wrapper,Orange Lace Filigree Cutouts,0.5
+wrapper,Purple Lace Filigree Cutouts,0.5
+wrapper,Silver & Gold Glitter,0.6
+wrapper,Iridescent Mermaid Scale,2
