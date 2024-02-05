@@ -1,3 +1,8 @@
+/*body {
+    background: rgb(255,224,0);
+    background: linear-gradient(132deg, rgba(255,224,0,1) 0%, rgba(171,148,20,1) 20%, rgba(255,254,9,0.25) 100%);
+}*/
+
 .button {
     background-color: #20872e;
     border: outset;
@@ -26,7 +31,7 @@ table th, table td {
 
 highlight {
     color: white;
-    font-weight: 900;
+    /*font-weight: 900;*/
     text-decoration: overline underline white;
     background: rgba(100,0,0,0.2);
 }
@@ -281,4 +286,168 @@ highlight {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+}
+
+/* Chapter 2 stuff starts here * /
+
+/* Fancy tree structure for the maintenance progress */
+.wtree {
+  li {
+    list-style-type: none;
+    margin:10px 0px 10px 10px;
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      top:-8px;
+      left:-20px;
+      border-left: 1px solid black;
+      border-bottom:1px solid black;
+      width:20px;
+      height:15px;
+    }
+    &:after {
+      position:absolute;
+      content:"";
+      top:7px;
+      left:-20px;
+      border-left: 1px solid black;
+      border-top:1px solid black;
+      width:20px;
+      height:100%;
+    }
+    &:last-child:after {
+      display:none;
+    }
+  }
+  span {
+    border: 2px outset black;
+    border-radius: 5px;
+    padding:1px 10px;
+    background: #efffec;
+  }
+}
+
+/* Have things that can fade start out faded */
+.can_fade {opacity: 0;}
+
+.selection_prompt {
+    font-family: 'VT323';
+    border: 4px outset black;
+    background: lightgrey;
+    text-align:center;
+    font-size: 30px;
+}
+
+.cupcake_table {
+    th {border-bottom: 2px solid black;}
+    td {vertical-align: top;}
+    selection {width: auto;}
+}
+
+/* Convoluted grid stuff for the card pairs etc. */
+.play-area {
+  display: grid;
+  grid-template-areas:
+    'inventory inventory inventory inventory inventory'
+    'deck card1 card2 card3 card4'
+    'deck_options valid1 valid2 valid3 valid4'
+    'deck_options pair1 pair1 pair2 pair2';
+  gap: -20px;
+}
+
+.inventory {grid-area: inventory;}
+.draw_toggles {grid-area: deck_options; width: 128px; text-align: center; margin-left: 23px;}
+.drawn_card .1 {grid-area: card1;}
+.drawn_card .2 {grid-area: card2;}
+.drawn_card .3 {grid-area: card3;}
+.drawn_card .4 {grid-area: card4;}
+.card_1_valid {grid-area: valid1; user-select: none; justify-self: end; margin-right: 80px;}
+.card_2_valid {grid-area: valid2; user-select: none; justify-self: start; margin-left: 80px;}
+.card_3_valid {grid-area: valid3; user-select: none; justify-self: end; margin-right: 80px;}
+.card_4_valid {grid-area: valid4; user-select: none; justify-self: start; margin-left: 80px;}
+.pair_1_result {grid-area: pair1; justify-self: center; text-align: center;}
+.pair_2_result {grid-area: pair2; justify-self: center; text-align: center; margin-bottom:300px;}
+
+/* hover fade effect on the draw pile */
+.draw_pile_hover {
+  grid-area: deck;
+  cursor: pointer;
+}
+.fading_image {
+    opacity: 1;
+    float: left;
+    border: 2px outset black;
+    border-radius: 5px;
+    padding: 20px;
+    background-color: #efffec;
+}
+.fading_layer {opacity: 0; position: absolute;}
+.draw_pile_hover:hover .fading_image {opacity: 0.6;}
+.draw_pile_hover:hover .fading_layer {opacity: 0.8;}
+.fade_in_text {
+  background-color: green;
+  user-select: none;
+  color: white;
+  margin-top: 60px;
+  text-align: center;
+  width: 700%;
+  max-width: 128px;
+  font-size: 16px;
+  padding: 16px 21px;
+}
+
+/* drawn cards look */
+.drawn_card {
+    width: 148px;
+    height: 148px;
+    margin: 0px 5px;
+    border-bottom: 2px outset black;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    overflow: hidden;
+
+    .arrow {
+      border: solid #8f6e0b;
+      border-width: 0 8px 8px 0;
+      display: inline-block;
+      padding: 4px;
+      margin-top: 8px;
+    }
+    .right {
+      float: right;
+      transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);
+    }
+    .left {
+      float: left;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+}
+
+/* Modal popup for full interrupt notifications */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+  /* Modal Content */
+  .modal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
 }

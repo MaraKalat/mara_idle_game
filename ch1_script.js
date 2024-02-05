@@ -1,4 +1,10 @@
-function init() {
+function ch1_init() {
+    // Set the number formatting environment
+    nFormat = new Intl.NumberFormat('en', {notation: "compact", maximumFractionDigits: 2});
+    moneyFormat = new Intl.NumberFormat('en', {notation: "compact", minimumFractionDigits: 2, maximumFractionDigits: 2});
+
+    // Update the title with the current chapter
+    document.getElementById("game title").innerHTML = "A Zesty Day 🍋 Chapter 1: It Takes A Village";
     pending_plot = null;
     posted_plot = [];
     Papa.parse(
@@ -10,7 +16,7 @@ function init() {
             complete: function(parsed_output) {
                 plot_json = parsed_output.data;
                 set_pending_plot('start1');
-                update();
+                ch1_update();
         	}
         }
     );
@@ -56,9 +62,8 @@ function init() {
 	plot_speed = 4; // Default = 4, lower is faster
 
     // Initialise the collapsible notes
-    var coll = document.getElementsByClassName("collapsible");
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
+    for (collapsible of document.getElementsByClassName("collapsible")) {
+      collapsible.addEventListener("click", function() {
         this.classList.toggle("active");
         content = this.nextElementSibling;
         if (content.style.maxHeight){
@@ -69,18 +74,27 @@ function init() {
           this.style.width = "94%";
         }
       })
-      // Immediately fire a click event so it starts expanded
-      coll[i].click();
+      // Immediately fire a click event so it starts expanded, unless it shouldn't
+      collapsible.click();
+      if (collapsible.id == "player_guide") // collapsible that shouldn't auto-open
+        collapsible.click();
     }
 
-	update();
+    // Close modals when clicking outside of content
+    window.onclick = function(event) {
+      if (event.target == document.getElementById("overlay_modal_ch1")) {
+        document.getElementById("overlay_modal_ch1").style.display = "";
+      }
+    }
+
+	ch1_update();
 }
 
 function make_lemonade(method = 'regular') {
     // Turn lemons into lemonade
     lemons -= method == 'magic' ? 4 : 1;
     use_ice();
-    magic_potion -= method == 'magic' ? 1 : 0;
+    magic_potion -= method == 'magic' ? (upgrades.includes('🦠2') ? 0 : 1) : 0;
 
     keep_making_lemonade = document.getElementById("keep_making_lemonade" + (method == 'magic' ? '_magic' : '')).checked;
     currently_making = true;
@@ -106,10 +120,10 @@ function make_lemonade(method = 'regular') {
                 clearInterval(interval_making_lemonade);
                 currently_making = false;
             }
-            update();
+            ch1_update();
         }
     }, 5)
-    update();
+    ch1_update();
 }
 
 function use_ice() {
@@ -131,7 +145,7 @@ function use_ice() {
                     ice_producing = false;
                 }
             }
-            update();
+            ch1_update();
         }, 1);
     }
 }
@@ -161,17 +175,17 @@ function sell_lemonade() {
 				clearInterval(interval_selling_lemonade);
 				currently_selling = false;
 			}
-			update();
+			ch1_update();
 		}
 	}, 10);
-	update();
+	ch1_update();
 }
 
 function buy_lemons(count = 1) {
     // Buy a specific amount of lemons
 	lemons += lemon_amount * count;
 	money -= lemon_price * count;
-	update();
+	ch1_update();
 }
 
 function buy_glitter_pens() {
@@ -179,7 +193,7 @@ function buy_glitter_pens() {
     upgrades.push('🖍️');
     money -= glitter_pens_price;
     document.getElementById("buy_glitter_pens").innerHTML = "[BOUGHT]";
-    update();
+    ch1_update();
 }
 
 function buy_ice_machine() {
@@ -190,7 +204,7 @@ function buy_ice_machine() {
     use_ice();
     ice_max += 160;
     document.getElementById("buy_ice_machine").innerHTML = "[SOLD OUT]";
-    update();
+    ch1_update();
 }
 
 function buy_sapling(count = 1, for_free = false) {
@@ -198,7 +212,7 @@ function buy_sapling(count = 1, for_free = false) {
 	saplings += count;
 	if (!for_free)
 	    money -= sapling_price * count;
-	update();
+	ch1_update();
 
 	// Set up tree growth if it isn't already going and you have enough magic potion
 	if (trees_growing || magic_potion < potion_to_grow_tree || saplings <= 0)
@@ -224,7 +238,7 @@ function buy_sapling(count = 1, for_free = false) {
 			// Determine how many saplings are growing in the batch, default of 1 when you don't have the second spread upgrade
 			sapling_next_batch_size = (upgrades.includes('🦠2') ? saplings : 1);
 		}
-		update();
+		ch1_update();
 	}, 10)
 }
 
@@ -252,7 +266,7 @@ function buy_magic_speed(number) {
         document.getElementById("potion_price").innerHTML = potion_price + " 🍋";
         document.getElementById("magic_speed_upgrade_row2").hidden = false;
     }
-    update();
+    ch1_update();
 }
 
 function buy_magic_spread(number) {
@@ -272,7 +286,7 @@ function buy_magic_spread(number) {
     if (number == 2) {
         potion_to_grow_tree = 0;
     }
-    update();
+    ch1_update();
 }
 
 function buy_unicorn() {
@@ -280,7 +294,7 @@ function buy_unicorn() {
     upgrades.push('🦄');
     lemons -= 1000000;
     document.getElementById("buy_unicorn").innerHTML = "[✔]";
-    update();
+    ch1_update();
 }
 
 function start_lemon_growth() {
@@ -292,12 +306,12 @@ function start_lemon_growth() {
 		    organic_sapling_progress -= 100;
 		    buy_sapling(trees, true);
 		}
-		update();
+		ch1_update();
 		start_lemon_growth();
 	}, 1000/(lemon_rate_per_tree * (upgrades.includes('🧪1') ? 2 : 1)));
 }
 
-function update() {
+function ch1_update() {
     // Create a new button if the pending plot is a player message
     if (pending_plot !== null) {
         switch (pending_plot.status) {
@@ -335,16 +349,17 @@ function update() {
     }
     check_plot_progress();
 
-	document.getElementById("lemons_counter").innerHTML = (lemons > 0) ? "Lemons: " + lemons + "🍋" : "";
-	document.getElementById("ice_counter").innerHTML = (ice >= 0) ? "Ice: " + ice + "🧊 / " + ice_max + " <progress id='ice_progress' value=" + ice_progress + " max='200'></progress>": "";
-	document.getElementById("lemonade_counter").innerHTML = (lemonade > 0) ? "Lemonade: " + lemonade + "🍹" : "";
-	document.getElementById("money_counter").innerHTML = (money > 0) ? "Money: " + money.toFixed(2) + "💶" : "";
+    document.getElementById("upgrades").innerHTML = (upgrades.length > 0) ? "Upgrades: " + upgrades : "";
+	document.getElementById("lemons_counter").innerHTML = (lemons > 0) ? "Lemons: " + nFormat.format(lemons) + "🍋" : "";
+	document.getElementById("ice_counter").innerHTML = (ice >= 0) ? "Ice: " + nFormat.format(ice) + "🧊 / " + ice_max + " <progress id='ice_progress' value=" + ice_progress + " max='200'></progress>": "";
+	document.getElementById("lemonade_counter").innerHTML = (lemonade > 0) ? "Lemonade: " + nFormat.format(lemonade) + "🍹" : "";
+	document.getElementById("money_counter").innerHTML = (money > 0) ? "Money: " + moneyFormat.format(money) + "💶" : "";
 	document.getElementById("magic_potion_counter").innerHTML = (magic_potion > 0) ? "Magic Potion: " + magic_potion + "mL ⚗️" : "";
-	document.getElementById("sapling_counter").innerHTML = (saplings > 0) ? "Saplings: " + saplings + "🌱" + "<progress id='sapling_progress' value=" + tree_progress + " max='1000'></progress>": "";
+	document.getElementById("sapling_counter").innerHTML = (saplings > 0) ? "Saplings: " + nFormat.format(saplings) + "🌱" + "<progress id='sapling_progress' value=" + tree_progress + " max='1000'></progress>": "";
 	document.getElementById("tree_counter").innerHTML =
-	    (trees > 0) ? "Lemon Trees: " + trees + "🌳 (+" +
-	    (lemon_rate_per_tree * trees * (upgrades.includes('🧪1') ? 2 : 1) * (upgrades.includes('🧪2') ? 3 : 1) * (upgrades.includes('🦠1') ? 4 : 1)).toFixed(2) + "🍋/s" +
-	    (upgrades.includes('🦠1') ? " & +" + (lemon_rate_per_tree * trees * (upgrades.includes('🧪1') ? 2 : 1) * (upgrades.includes('🦠2') ? 8 : 1)/ 100).toFixed(2) + "🌱/s" : "") + ")" : "";
+	    (trees > 0) ? "Lemon Trees: " + nFormat.format(trees) + "🌳 (+" +
+	    nFormat.format(lemon_rate_per_tree * trees * (upgrades.includes('🧪1') ? 2 : 1) * (upgrades.includes('🧪2') ? 3 : 1) * (upgrades.includes('🦠1') ? 4 : 1)) + "🍋/s" +
+	    (upgrades.includes('🦠1') ? " & +" + nFormat.format(lemon_rate_per_tree * trees * (upgrades.includes('🧪1') ? 2 : 1) * (upgrades.includes('🦠2') ? 8 : 1)/ 100) + "🌱/s" : "") + ")" : "";
 
 	// Check what actions are currently happening and disable buttons based on that
     document.getElementById("sell_lemonade_button").disabled = lemonade <= 0 || currently_selling;
@@ -367,10 +382,15 @@ function update() {
     document.getElementById("buy_unicorn").disabled = upgrades.includes('🦄') || lemons < 1000000;
 }
 
+function modal_popup(message) {
+    document.getElementById("overlay_modal_ch1").style.display = "block";
+    document.getElementById("modal_text_ch1").innerHTML = message;
+}
+
 function message_button_clicked() {
     document.getElementById("send_message").remove();
     pending_plot.status = 'message pending';
-    update();
+    ch1_update();
 }
 
 function get_plot(code) {
@@ -398,9 +418,17 @@ function add_plot(plot_row) {
     // Translate the newlines to the HTML tags for newlines
     message = message.replaceAll("\n", "<br>");
     // Insert the correct dynamic values for any placeholders
-    message = message.replace("money_amount", money.toFixed(2) + "💶");
+    message = message.replace("money_amount", moneyFormat.format(money) + "💶");
     // Translate the mentions to also highlight
     message = message.replace(/(@[^\s \.,\!\?]+)([\s \.,!\?])/gm, "<highlight>$1</highlight>$2");
+    // Add any new guide points to the guide message
+    guide_update = plot_row["guide_update"];
+    if (guide_update != "") {
+        guide_element = document.getElementById("player_guide_content");
+        guide_element.innerHTML = guide_element.innerHTML.replace("<br><br>", "<br>❧ " + guide_update + "<br><br>");
+        if (!!guide_element.style.maxHeight) // check if not null
+            guide_element.style.maxHeight = guide_element.scrollHeight + "px";
+    }
 
     // Fill in the speech bubble with the correct avatar and message
     if (plot_row["colour"] == 'green')
@@ -421,7 +449,7 @@ function add_plot(plot_row) {
         set_pending_plot(next_step);
     }
 
-    update();
+    ch1_update();
 }
 
 function set_pending_plot(code) {
@@ -435,7 +463,7 @@ function set_pending_plot(code) {
     } else {
         pending_plot.status = 'message pending';
     }
-    update();
+    ch1_update();
 }
 
 function check_plot_progress() {
@@ -512,6 +540,12 @@ function check_plot_progress() {
     // Catch the break in the sapling plot where the new note is delivered to you
     if (!posted_plot.includes('saplings7') && posted_plot.includes('saplings6')) {
         set_pending_plot('saplings7');
+        modal_popup(
+            "A thin figure in a long coat approaches Carmo's stand.<br>" +
+            "A gloved hand puts a thin-glassed bottle and a note on the counter<br>" +
+            "The bottle is labeled 'Magic  Pot ion' in sloppy handwriting, its content shimmering in the sun.<br><br>" +
+            "Is this the figure Carmo had just been talking to? Huh. Guess they aren't much of a conversationalist.<br>"
+        );
         document.getElementById("magic_potion_note").hidden = false;
         document.getElementById("magic_potion_note_content").hidden = false;
         document.getElementById("magic_potion_note").click();
@@ -589,48 +623,48 @@ function check_plot_progress() {
         return;
     }
     // Some more feedback banter, increasingly frantic
-    if (!posted_plot.includes('misc1') && lemonade_sales > 250) {
+    if (!posted_plot.includes('misc1') && lemonade_sales > 250 - magic_upgrades_bought * 100) {
             set_pending_plot('misc1');
             return;
         }
-    if (!posted_plot.includes('misc2') && lemonade_sales > 400 && magic_potion > 0) {
+    if (!posted_plot.includes('misc2') && lemonade_sales > 400 - magic_upgrades_bought * 100 && magic_potion > 0) {
             set_pending_plot('misc2');
             return;
         }
-    if (!posted_plot.includes('misc3') && lemonade_sales > 550 && posted_plot.includes('misc2')) {
+    if (!posted_plot.includes('misc3') && lemonade_sales > 550 - magic_upgrades_bought * 100 && posted_plot.includes('misc2')) {
             set_pending_plot('misc3');
             return;
         }
-    if (!posted_plot.includes('misc4') && lemonade_sales > 700 && posted_plot.includes('misc3')) {
+    if (!posted_plot.includes('misc4') && lemonade_sales > 700 - magic_upgrades_bought * 100 && posted_plot.includes('misc3')) {
             set_pending_plot('misc4');
             return;
         }
-    if (!posted_plot.includes('misc5') && lemonade_sales > 850 && posted_plot.includes('misc4')) {
+    if (!posted_plot.includes('misc5') && lemonade_sales > 850 - magic_upgrades_bought * 100 && posted_plot.includes('misc4')) {
             set_pending_plot('misc5');
             return;
         }
     // And the start of the worried store plot in between
-    if (!posted_plot.includes('worried_store1') && lemonade_sales > 1000) {
+    if (!posted_plot.includes('worried_store1') && lemonade_sales > 1000 - magic_upgrades_bought * 100) {
             set_pending_plot('worried_store1');
             return;
         }
-    if (!posted_plot.includes('misc6') && lemonade_sales > 1250 && posted_plot.includes('misc5')) {
+    if (!posted_plot.includes('misc6') && lemonade_sales > 1150 - magic_upgrades_bought * 100 && posted_plot.includes('misc5')) {
             set_pending_plot('misc6');
             return;
         }
-    if (!posted_plot.includes('misc7') && lemonade_sales > 1500 && posted_plot.includes('misc6')) {
+    if (!posted_plot.includes('misc7') && lemonade_sales > 1300 - magic_upgrades_bought * 100 && posted_plot.includes('misc6')) {
             set_pending_plot('misc7');
             return;
         }
-    if (!posted_plot.includes('misc8') && lemonade_sales > 1750 && posted_plot.includes('misc7')) {
+    if (!posted_plot.includes('misc8') && lemonade_sales > 1450 - magic_upgrades_bought * 100 && posted_plot.includes('misc7')) {
             set_pending_plot('misc8');
             return;
         }
-    if (!posted_plot.includes('misc9') && lemonade_sales > 2000 && posted_plot.includes('misc8')) {
+    if (!posted_plot.includes('misc9') && lemonade_sales > 1600 - magic_upgrades_bought * 100 && posted_plot.includes('misc8')) {
             set_pending_plot('misc9');
             return;
         }
-    if (!posted_plot.includes('misc10') && lemonade_sales > 2500 && posted_plot.includes('misc9')) {
+    if (!posted_plot.includes('misc10') && lemonade_sales > 1750 - magic_upgrades_bought * 100 && posted_plot.includes('misc9')) {
             set_pending_plot('misc10');
             return;
         }
@@ -683,4 +717,19 @@ function switch_shop_tab(evt, tab_name) {
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tab_name).style.display = "block";
   evt.currentTarget.className += " active";
+}
+
+function prompt_chapter_two() {
+    if(confirm('Are you sure you want to skip the first chapter and go straight to chapter 2?'))
+        start_chapter_two();
+}
+
+function start_chapter_two() {
+    document.getElementById('ch1').hidden = true;
+    document.getElementById('ch2p').hidden = false;
+    document.getElementById('skip_chapter1').hidden = true;
+    // No, I'm not sure why the following is needed. *shrugs*
+    document.getElementById('sleep_cycle_dialogue').click();
+    document.getElementById('sleep_cycle_dialogue').click();
+    ch2p_init();
 }

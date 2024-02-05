@@ -3,61 +3,90 @@
 <head>
     <title>A Zesty Day 🍋 by Mara Kalat</title>
     <link rel="stylesheet" type="text/css" media="all" href="styles.css">
-    <link rel="shortcut icon" type="image/png" href="lemon_1f34b.png"/>
+    <!-- Little icon in the tab / window -->
+    <link rel="shortcut icon" type="image/png" href="assets/lemon_1f34b.png"/>
+    <!-- Carmo's Mom's handwriting -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Shadows+Into+Light">
+    <!-- Scribbled Note's handwriting -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Reenie+Beanie">
-    <script src="script.js"></script>
+    <!-- Monospace computer text font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=VT323">
+    <!-- Script files for the different chapters -->
+    <script src="ch1_script.js"></script>
+    <script src="ch2p_script.js"></script>
+    <!-- This is for the CSV script file parsing-->
     <script src="lib/papaparse.min.js"></script>
+    <!-- Keyboard shortcuts -->
+    <script src="lib/shortcut.js"></script>
 </head>
-<body onload="init()">
-<h2>A Zesty Day 🍋</h2>
+<body onload="ch1_init()">
+<h2 id="game title">A Zesty Day 🍋</h2>
 <hr>
 
+<!-- Chapter 1 Contents -->
+<div id="ch1">
 <!-- Story Notes -->
 <button class="collapsible">A note from mom on the kitchen counter</button>
 <div class="content" style="font-family: 'Shadows Into Light';">
-    <p>
-        Good morning Carmo, dear,<br><br>
-        I hope you slept well. I'll be back late tonight, but I hope you have a great time with your lemonade stand today.
-        I think it's such a fun idea, and I hope people come check it out! (Remember to be nice to them!)<br><br>
+    Good morning Carmo, dear,<br><br>
+    I hope you slept well. I'll be back late tonight, but I hope you have a great time with your lemonade stand today.
+    I think it's such a fun idea, and I hope people come check it out! (Remember to be nice to them!)<br>
+    There's leftovers in the fridge, no need to heat them up or anything.<br><br>
 
-        You remember how to make lemonade with the food processor, right?
-        Just add a lemon and a cup of ice from the fridge, press the button and watch it whirl!
-        (Don't put in forks or anything!)<br><br>
+    You remember how to make lemonade with the food processor, right?
+    Just add a lemon and a cup of ice from the fridge, press the button and watch it whirl!
+    (Don't put in forks or anything!)<br><br>
 
-        If you run out of lemons and lemonade, you can buy more around the corner.
-        (If the fridge runs out of ice, just wait a bit. You know how this works.)<br>
-        Love,<br>
-        Mom♡
-        <button
-            class="button"
-            style="float: right;"
-            onclick="this.parentElement.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
-        >Close</button>
-    </p>
+    If you run out of lemons and lemonade, you can buy more around the corner.
+    (If the fridge runs out of ice, just wait a bit. You know how this works.)<br>
+    Love,<br>
+    Mom♡
+    <button
+        class="button"
+        style="float: right;"
+        onclick="this.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+    >Close</button>
 </div>
 <button class="collapsible" id="magic_potion_note" hidden>A sloppily scribbled note</button>
 <div class="content" id="magic_potion_note_content" style="font-family: 'Reenie Beanie';" hidden>
-    <p>
-        To use the <s>Reagent</s>Magic Potion, add a small splash to a freshly planted sapling. Only works during the day on a su nny day.
-        <br><br>
-        <s>Definitely do not</s>You can also use it to make your lemon a de while using less ice.
-        Inst ead of using equal parts lemons and ice, you can in stead use:
-            <ul type = "circle">
-                <li>4 lemons
-                <li>1 cup of ice
-                <li><s>1 μL Reag</s> 1 drop of Potion
-            </ul>
-        Let me know if you want mor e M a gic ?
-        <button
-                class="button"
-                style="float: right;"
-                onclick="this.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
-        >Close</button>
+    To use this <s>Reagent</s>Magic Potion to make saplings grow faster, add a small sp lash to a freshly planted sapling. Only works during the day on a su nny day.
+    <br><br>
+    <s>Definitely do not</s>You can also use it to make your lemon a de while using less ice.
+    Inst ead of using equal parts lemons and ice, you can in stead use:
+        <ul type = "circle">
+            <li>4 lemons
+            <li>1 cup of ice
+            <li><s>1 μL Reag</s> 1 drop of Potion
+        </ul>
+    Let me know if you want mor e M a gic ?
+    <button
+            class="button"
+            style="float: right;"
+            onclick="this.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+    >Close</button>
+</div>
+<button class="collapsible" id="player_guide">What to do next? - Click for help</button>
+<div class="content" id="player_guide_content" style="font-size: 20px;">
+    Welcome to my game! Thank you for playing it. 🌳<br>
+    This guide will automatically update with next steps, so refer back to this guide if you are stuck.<br>
+    ❧ To start: Send a message to get the word out about your lemonade stand.<br><br>
+    <button
+            class="button"
+            style="float: right;"
+            onclick="this.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+    >Close</button>
 </div>
 
+<div id="overlay_modal_ch1" class="modal">
+    <div class="modal-content">
+        <div id="modal_text_ch1">Placeholder text, you shouldn't be seeing this.</div><br>
+        <button class="button" style="float:right; margin-top: -30px;" onclick="document.getElementById('overlay_modal_ch1').style.display = '';">Close</button>
+    </div>
+</div>
+
+
 <!-- Inventory -->
-<p id="upgrades"></p>
+<p id=upgrades></p>
 <p id=lemons_counter></p>
 <p id=ice_counter><progress id="ice_progress" value="0" max="200"></progress></p>
 <p id=lemonade_counter></p>
@@ -254,11 +283,178 @@
     <div class="bubble white"><div style="font-size:30px; float:left">👩🏽‍✈️</div><b>DM from "Mom (work phone)"</b><br>I've added you to the big group chat, but won't have time to check up on you while I'm working.<br>I trust you to behave yourself. (Please) Love, mom.</div>
 </div>
 
+</div>
+
+<!-- Chapter 2 Prologue Contents -->
+<div id="ch2p" hidden="true">
+    <!-- Story Notes -->
+    <button class="collapsible" id="sleep_cycle_dialogue">[ SLEEP CYCLE COMPLETE ]</button>
+    <div class="content" style="font-family: 'VT323';">
+        <p>
+            UnicOS Sleep Cycle Complete<br>
+            ---------------------------<br><br>
+            Sole registered administrator "Carmo" still asleep, stand by for system verification and initial processing...<br><br>
+            [▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓] 100%<br><br>
+            01 CRITICAL ERROR(S) FOUND:<br>
+            -----------------<br>
+            LOW POWER WARNING<br>
+            -----------------<br>
+            Generator output below projected requirement.<br>
+            MAXIMUM PRIORITY, fix immediately.<br><br>
+
+            ----------------------------------<br>
+            Confirm engaging Maintenance Cycle<br>
+            > ...
+            <button
+                    class="button"
+                    style="float: right;"
+                    onclick="this.parentElement.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+            >Close</button>
+        </p>
+    </div>
+    <button class="collapsible" id="operational_manual_dialogue">Operational Manual - Click for help</button>
+    <div class="content" style="font-size: 20px;">
+        <br><b>UnicOS Operational Manual:</b><hr>
+        The core of the UnicOS system is the Command Stack. Every cycle the operator draws commands from the command stack to issue orders.<br>
+        ⦿ The Command Stack is randomised (i.e. shuffled) between cycles.<br>
+        ⦿ Commands are resolved in pairs. Many commands have a Combo element that impacts the other command in the pair.<br>
+        ⦿ Resolving a Command makes it stronger as the system accrues experience with this particular Command.<br>
+        ⦿ If the system has insufficient power for full operation it will enter an autonomous maintenance cycle. Effectively this means:<br>
+        &nbsp;&nbsp;⦾ Commands in the Command Stack can not be edited until maintenance cycle is at least partially complete.<br>
+        &nbsp;&nbsp;⦾ Functions with high power usage are disabled and can be restored gradually (e.g. cognition, orbital adjustments, laser strike targeting).<br>
+        &nbsp;&nbsp;⦾ Several diagnostic routines must be completed to end the maintenance cycle and resume normal operations.<br>
+        &nbsp;&nbsp;⦾ If you are getting bored you can hold C to draw Commands as fast as possible.<br>
+        ⦿ Please report any anomalous readings or behaviour to the agency (consult sticker on satellite chassis for contact details).<br>
+        <button
+                class="button"
+                style="float: right;"
+                onclick="this.parentElement.previousElementSibling.dispatchEvent(new MouseEvent('click'))"
+        >Close</button><br><br>
+    </div>
+    <br>
+    <div id="overlay_modal_ch2" class="modal">
+        <div class="modal-content">
+            <div id="modal_text_ch2">Placeholder text, you shouldn't be seeing this.</div><br>
+            <table style="text-align: center;  margin-left: auto; margin-right: auto;"><tr>
+                <td><figure id="modal_old_card" class="drawn_card"></figure><span>You lose this Command</span></td>
+                <td><figure id="modal_new_card" class="drawn_card"></figure><span>You gain this Command</span></td>
+            </tr></table>
+            <button class="button" style="float:right; margin-top: -30px;" onclick="document.getElementById('overlay_modal_ch2').style.display = '';">Close</button>
+        </div>
+    </div>
+
+    <!-- Huge Cupcake Factory Table -->
+    <div id="cupcake_factory" hidden>
+        <div id="cupcake_selection" class="selection_prompt"><div id="cupcake_selection_text"></div>
+            <button id="start_cupcake_button" class="button" style="margin-bottom: 10px;" onclick="produce_selected_cupcake()"></button>
+        </div>
+        <table class="cupcake_table">
+            <tr><th>Cake Segment</th><th>Filling Segment</th><th>Frosting Segment</th><th>Toppings</th><!--th>Wrapper</th--></tr>
+            <tr onclick="update_cupcake_selection()">
+                <td id="factory_list_cake"></td>
+                <td id="factory_list_filling"></td>
+                <td id="factory_list_frosting"></td>
+                <td id="factory_list_topping"></td>
+                <!--td id="factory_list_wrapper"></td-->
+            </tr>
+        </table>
+    </div>
+
+    <!-- Knowledge upgrade table -->
+    <table id="knowledge_upgrades" style="margin: 10px">
+        <tr>
+            <th>Upgrade</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Acquire?</th>
+        </tr>
+        <tr id="reaction_purchases_line">
+            <td>Stabilise Reactor</td>
+            <td id="reactor_price_field"></td>
+            <td id="reactor_income_boost"></td>
+            <td>
+                <button id="buy_income_button" class="button" onclick="gain_energy_income_percent(reactor_price, 0.1, 0)">Get x1</button>
+                <button id="buy_5_income_button" class="button" onclick="gain_energy_income_percent(5 * reactor_price, 0.61051, 0)">Get x5</button>
+            </td>
+        </tr>
+        <tr>
+            <td>Get Energy Spike Ω</td>
+            <td id="energy_spike_price_field"></td>
+            <td>Gain the strongest Energy Spike Command</td>
+            <td><button id="buy_energy_spike_omega" class="button" onclick="gain_card(energy_omega_card, 60); this.parentElement.parentElement.hidden = true;"
+            >Get</button></td>
+        </tr>
+        <tr>
+            <td>Restart Cupcake Factory</td>
+            <td id="cupcake_factory_price_field"></td>
+            <td>Gain a Command for starting the factory</td>
+            <td><button id="buy_cupcake_command" class="button" onclick="gain_card(cupcake_card, 100) ; this.parentElement.parentElement.hidden = true;">Get</button></td>
+        </tr>
+    </table>
+    <br>
+    <!-- Grid based play area -->
+    <div class="play-area">
+        <!-- Overview of Unicorn Resources -->
+        <div id="unicorn_resources" class="inventory">
+            <span id=energy_counter></span><span class="can_fade" id="energy_change"></span><br>
+            <span id=knowledge_counter></span><span class="can_fade" id="knowledge_change"></span><br>
+            <div id="maintenance_resources">
+                <ul class="wtree" style="margin-left:-30px; margin-bottom:-5px;"><span id="maintenance_counter"></span></ul>
+                <ul class="wtree">
+                    <li><span id=sensor_counter></span><span class="can_fade" id="sensor_change"></span><ul>
+                        <li><span id=sensor_visual_counter></span><span class="can_fade" id="sensor_visual_change"></span></li>
+                        <li><span id=sensor_auditory_counter></span><span class="can_fade" id="sensor_auditory_change"></span></li>
+                        <li><span id=sensor_olfactory_counter></span><span class="can_fade" id="sensor_olfactory_change"></span></li>
+                    </ul></li>
+                    <li><span id=defragment_counter ></span><span class="can_fade" id="defragment_change"></span></li>
+                    <li><span id=factory_counter ></span><span class="can_fade" id="factory_change"></span></li>
+                    <li><button class="button" id="end_maintenance_button" style="margin-left: 1px" onclick="finish_maintenance_cycle()">
+                        Finish Maintenance Cycle</button></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Draw pile -->
+        <div class="draw_pile_hover" onclick="click_draw_pile()">
+            <img src="assets/unicorn.png" alt="[A fancy card back with a cyber unicorn picture]"
+                 width="128" class="fading_image">
+            <div class="fading_layer">
+                <div class="fade_in_text" id="draw_pile_text">Draw Command</div>
+            </div>
+        </div>
+        <div class="draw_toggles">Click above to draw a Command (or press C!)</div>
+
+        <!-- Drawn cards -->
+        <figure id="card_1" class="drawn_card 1" style="justify-self: end;"></figure>
+        <div class="card_1_valid"></div>
+        <figure id="card_2" class="drawn_card 2" style="justify-self: start;"></figure>
+        <div class="card_2_valid"></div>
+        <div class="pair_1_result"></div>
+        <figure id="card_3" class="drawn_card 3" style="justify-self: end;"></figure>
+        <div class="card_3_valid"></div>
+        <figure id="card_4" class="drawn_card 4" style="justify-self: start;"></figure>
+        <div class="card_4_valid"></div>
+        <div class="pair_2_result"></div>
+    </div>
+
+    <!div style="overflow: hidden; display: inline-block;">
+</div>
+
+<!-- Chapter 2 Contents -->
+<div id="ch2" hidden="true">
+    
+</div>
+
 <!-- Fancy floating footer -->
 <div class="footer">
-    <table width="100%"><tr><td></td><td>A game by Mara Kalat</td></tr>
-    <tr><td align="left"><div title="Scroll to the top of the page" onclick="document.documentElement.scrollTop = 0;" style="cursor: pointer">⏫</div></td>
-        <td><a href="mailto:a.zesty.day@gmail.com">Feedback? Email me!</a></td></tr>
+    <table width="100%"><tr><td></td><td>A game by Mara Kalat 🌳</td></tr>
+    <tr>
+        <td align="left">
+            <div title="Scroll to the top of the page" onclick="document.documentElement.scrollTop = 0;" style="cursor: pointer; float: left; padding-right: 10px">⏫</div>
+            <div id="skip_chapter1" title="[DEV BUTTON] Skip to chapter 2" onclick="prompt_chapter_two()" style="cursor: pointer; float: left; padding-right: 10px">⏭️</div>
+        </td>
+        <td><a href="mailto:a.zesty.day@gmail.com">Feedback? Email me!</a></td>
+    </tr>
     </table>
 </div>
 </body>
