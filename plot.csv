@@ -169,20 +169,20 @@ My flight just got rerouted to São Filipe. Something about a mass riot on the i
 Stay inside, lock the doors, write me back, please.",
 worried_mom2,worried_mom3,🧒🏽,green,"Hey mom! Is that what’s going on? I’m fine, don’t worry. There’s nobody around here.
 I’ll take my new friend and go inside. Let me know when you’re coming back please!",
-worried_mom3,worried_mom4,📵,red,"Your message not could not be sent.
+worried_mom3,worried_mom4,📵,bubble-alt red,"Your message not could not be sent.
 Please try again later.",
 worried_mom4,worried_mom5,🧒🏽,green,"Mom? The phone’s being weird. I’m okay and at home now. I’ve locked the doors.
 I’m eating the leftovers in the fridge like you said, they’re nice.",
-worried_mom5,worried_mom6,📵,red,"Your message not could not be sent.
+worried_mom5,worried_mom6,📵,bubble-alt red,"Your message not could not be sent.
 Please try again later.",
 worried_mom6,worried_mom7,🆘,red,"This is a mandatory shelter-in-place order for people on the island of Brava.
 Go indoors immediately and remain inside until further notice.
 Gather a radio, flashlight, food and water and await further instructions.",
 worried_mom7,worried_mom8,🧒🏽,green,"Well that doesn’t sound great. Did everybody get that one?
 I guess I’ll go to bed then? Maybe there’ll be news in the morning.",...maybe it’s time to call it a day.
-worried_mom8,dev_notice_end_of_chapter,📵,red,"Your message not could not be sent.
+worried_mom8,dev_notice_end_of_chapter,📵,bubble-alt red,"Your message not could not be sent.
 Please try again later.",
-dev_notice_end_of_chapter,,🌳,yellow,"<b>Not part of the narrative, developer notice</b>
+dev_notice_end_of_chapter,,🌳,bubble-alt yellow,"<b>Not part of the narrative, developer notice</b>
 You made it to the end of chapter 1! Great job causing some kind of apocalypse.
 Press here to start chapter 2 when you’re ready.
 
