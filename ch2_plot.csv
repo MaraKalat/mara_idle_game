@@ -1,0 +1,14 @@
+name,contents,gained_command,direct_gains,prompt_options
+carmo01,"Okay, I found a fresh notebook. Let’s do this in a structured way.
+My phone still can’t send messages and there have been no new messages or calls.
+
+The unicorn is great, except that I can’t keep calling it “the unicorn”, so… let’s fix that!",name_unicorn,,
+carmo02,"That’s better! Fern_name, the perfect name for Fern_her.
+Now, what to do next…",,,"What’s outside like?|carmo02a
+What did the message say to do?|carmo02b
+Have breakfast?|carmo02c"
+carmo02a,Outside is all overgrown and I can’t see very far from the window. It’s pretty but kind of scary.,,1 stress,
+carmo02b,"The warning message on my phone said to gather a radio, a flashlight, food and water…
+My phone has a flashlight, so that’s 1 done immediately.",search_the_house,,
+carmo02c,"I should eat the cupcake Fern_name made me for breakfast. I’ve got to remember to eat!
+Ooh, very tasty. I like the cupcake_flavour in there. Thank you Fern_name.",,20 energy,

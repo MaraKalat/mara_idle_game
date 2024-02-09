@@ -6,7 +6,7 @@ Please keep in mind that you can press the ⏭️ button to skip to the next cha
 [Feedback](mailto:a.zesty.day@gmail.com) is most welcome and deeply appreciated.
 
 ### Changelog
-* **0.5 (2024-02-05) Chapter 2 Prologue**
+* **0.5 (2024-02-05) Chapter 2 Prologue 🧁**
   *  A slightly reworked Chapter 1, mostly tweaks.
   *  Fully functional prologue to Chapter 2, adding about 15 minutes of playtime.
   *  (Still no saving)
