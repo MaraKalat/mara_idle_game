@@ -1,16 +1,34 @@
 code,contents,gained_command,direct_gains,prompt_options
 carmo01,"Okay, I found a fresh notebook. Let’s do this in a structured way.
-‣ My phone still can’t send messages and there have been no new messages or calls.
 
+‣ My phone still can’t send messages and there have been no new messages or calls.
+‣ Mom is probably worried about me. ...I’m also a bit worried about me.
 ‣ The unicorn is great, except
     except that I can’t keep calling it “the unicorn”, can I?
-so… let’s fix that first!",Think of a name,,
+  So… let’s fix that first! Hmmm…",Think of a name,,
 carmo02,"That’s better! Fern_name, the perfect name for Fern_her.
 Now, what to do next…",,,"What’s outside like?|carmo02a
 What did the message say to do?|carmo02b
-Have breakfast?|carmo02c"
+Have breakfast?|carmo02c
+Is the name okay?|carmo02e"
 carmo02a,Outside is all overgrown and I can’t see very far from the window. It’s pretty but kind of scary.,,1 stress,
 carmo02b,"The warning message on my phone said to gather a radio, a flashlight, food and water…
-My phone has a flashlight, so that’s 1 done immediately.",Search the House,,
-carmo02c,"I should eat the cupcake Fern_name made me for breakfast. I’ve got to remember to eat!
-Ooh, very tasty. I like the cupcake_flavour in there. Thank you Fern_name.",,20 energy,
+My phone has a flashlight, so that’s 1 done immediately.
+Let’s see if I can find the rest…",Search the House,,
+carmo02c,I should eat the cupcake Fern_name made me for breakfast. I’ve got to remember to eat!,Eat a Cupcake,,
+carmo02d,"Ooh, very tasty. I like the cupcake_flavour in there. Thank you Fern_name.",,20 energy,
+carmo02e,"How about it Fern_name? Do you like your new name?
+Hah! I’ll take that nodding as a yes.",,Fern_name 1 affection Carmo,
+carmo03,"That’s me all set, I think. Or at least that’s all I can think of to do without going outside…",,,"Better stay put and wait for the situation to change|carmo03a
+So… that means we go outside, right?|carmo03b"
+carmo03a,So… what do I do in here…,Play Some Games,,
+carmo03b,"What if there’s people outside that need help? Or that can help me?
+I should have a look outside and see what’s going on.
+Just a bit, you know?",Go outside,,
+carmo04,Ah. This is an issue. The door’s stuck! I guess the trees grew up to it?,,,"Try the back door?|carmo04a
+Climb out a window|carmo04b
+Ask for help|carmo04c"
+carmo04a,"Back door is grown shut as well. Good idea though, way to go me.",,2 observation xp,
+carmo04b,But I want Fern_name to come! I don’t think Fern_she likes the idea of staying in her by Fern_herself.,,"Carmo 1 affection Fern_name
+4 empathy xp",
+carmo04c,Fern_name? Can you help me? I want us to get outside but we need to break down the door to get out.,Break Down the Door,Fern_name 1 affection Carmo,
